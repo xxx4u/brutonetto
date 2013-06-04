@@ -1,0 +1,44 @@
+<div ng-controller='authorization.signin.controller'>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span6">
+                &nbsp;
+            </div>
+            <div class="span6">
+                <div margin="0px 8px;">
+                    <form name="signInForm">
+                        <fieldset>
+                            <legend translate>APPLICATION.PART.AUTHORIZATION.SIGN_IN.SIGN_IN_TITLE</legend>
+                            
+                            <div class="alert-area">
+                                <div class="alert" ng-class="{error: 'alert-error'}[alert.type]" ng-repeat="alert in alerts" >
+                                    <button type="button" class="close" ng-click="dismissAlert($index)">&times;</button>
+                                    <strong>{{ alert.title }}</strong>&nbsp;&nbsp;{{ alert.message }}
+                                </div>
+                            </div>
+                            
+                            <input name="username" type="text" placeholder="{{'APPLICATION.PART.AUTHORIZATION.SIGN_IN.USER_IDENTIFIER_PLACEHOLDER' | translate}}" autocomplete="off" class="input-xlarge" ng-model="userIdentifier" required />
+                            
+                            <br />
+                            <input name="password" type="password" placeholder="{{'APPLICATION.PART.AUTHORIZATION.SIGN_IN.PASSWORD_PLACEHOLDER' | translate}}" class="input-xlarge" ng-model="password" required />
+
+                            <div class="form-actions">
+                                <div class="control-group">
+                                    <div class="controls">
+                                        <button class="btn btn-primary" ng-click="doSignIn()" ng-disabled="!signInForm.$valid || (signInForm.$valid && isBusy)" translate>APPLICATION.PART.AUTHORIZATION.SIGN_IN.SIGN_IN_COMMAND</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="control-group">
+                                    <div class="controls">
+                                        <span><span translate>APPLICATION.PART.AUTHORIZATION.SIGN_IN.NEW_USER</span>&nbsp;<button class="btn btn-mini" type="button" ng-click="goToSignUp()" translate>APPLICATION.PART.AUTHORIZATION.SIGN_IN.GOTO_SIGN_UP_COMMAND</button></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

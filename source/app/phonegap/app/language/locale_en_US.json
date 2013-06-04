@@ -1,0 +1,143 @@
+{
+    "APPLICATION" : {
+        "INFO_LABEL": "Info",
+        "WARNING_LABEL": "Warning",
+        "ERROR_LABEL": "Error",
+        "CONTROLLER": {
+            "LANGUAGE_MENU_ITEM": "Language"
+        },
+        "PART" : {
+            "BRUTONETTO": {
+                "CAPTION": "Bruto-netto", 
+                "BEREKEND_BRUTOLOON": { 
+                    "CAPTION":"Bruto"
+                },        
+                "BEREKEND_NETTOLOON": { 
+                    "CAPTION":"Netto"
+                },
+                "NIEUWE_BEREKENING": {
+                    "CAPTION": "New calculation"
+                },
+                "ALGEMENE_INFORMATIE": { 
+                    "CAPTION":"Algemene gegevens"
+                },
+                "GEZINSINFORMATIE": { 
+                    "CAPTION":"Gezinsinformatie"
+                },
+                "VERGOEDING_INHOUDING": { 
+                    "CAPTION":"Vergoedingen en inhoudingen"
+                },
+                "BEREKENINGSWIJZE": { 
+                    "CAPTION": "Berekeningswijze",
+                    "NETTO_NAAR_BRUTO": "Netto - bruto",
+                    "BRUTO_NAAR_NETTO": "Bruto - netto"
+                },
+                "STATUUT": { 
+                    "CAPTION": "Statuut",
+                    "ARBEIDER": "Arbeider",
+                    "BEDIENDE": "Bediende"
+                },
+                "BURGERLIJKE_STAAT": {
+                    "CAPTION": "Burgelijke staat",
+                    "SAMENWONEND_FEITELIJK": "Feitelijk samenwonend",
+                    "SAMENWONEND_OVERLEDEN": "Overleden",
+                    "SAMENWONEND_WETTELIJK_EINDE": "Wettelijk samenwonend",
+                    "SAMENWONEND_FEITELIJK_EINDE": "Feitelijk samenwonend",
+                    "ONGEHUWD": "Ongehuwd",
+                    "GEHUWD": "Gehuwd",
+                    "WEDUWNAAR": "Weduwnaar/Weduwe",
+                    "GESCHEIDEN_WETTELIJK": "Wettelijk gescheiden",
+                    "GESCHEIDEN_FEITELIJK": "Feitelijk gescheiden"
+                },
+                "MAAND_OF_UURLOON": { 
+                    "CAPTION": "Uur- of maandloon"
+                },
+                "UREN_PER_WEEK": {
+                    "CAPTION": "Uren per week"
+                },
+                "WERKDAGEN_PER_WEEK": {
+                    "CAPTION": "Werkdagen per week"
+                },
+                "BEROEPS_INKOMEN_PARTNER" : {
+                    "CAPTION": "Beroepsinkomen partner"
+                },
+                "VALIDE_KINDEREN" : {
+                    "CAPTION": "Valide kinderen"
+                },
+                "MINDERVALIDE_KINDEREN" : {
+                    "CAPTION": "Mindervalide kinderen"
+                },
+                "VALIDE_ANDEREN_65_JAAR_OF_JONGER" : {
+                    "CAPTION": "Validen 65 jaar of jonger"
+                },
+                "MINDERVALIDE_ANDEREN_65_JAAR_OF_JONGER" : {
+                    "CAPTION": "Mindervaliden 65 jaar of jonger"
+                },
+                "VALIDE_ANDEREN_OUDER_DAN_65_JAAR" : {
+                    "CAPTION": "Validen ouder dan 65 jaar"
+                },
+                "MINDERVALIDE_ANDEREN_OUDER_DAN_65_JAAR" : {
+                    "CAPTION": "Mindervaliden ouder dan 65 jaar"
+                },
+                "GEWEST": { 
+                    "CAPTION": "Gewest",
+                    "VLAAMS": "Vlaams",
+                    "WAALS": "Waals"
+                },
+                "IS_MINDERVALIDE": { 
+                    "CAPTION": "Ben je mindervalide",
+                    "TRUE": "Ja",
+                    "FALSE": "Nee"
+                },
+                "IS_PARTNER_MINDERVALIDE": { 
+                    "CAPTION": "Is je partner mindervalide",
+                    "TRUE": "Ja",
+                    "FALSE": "Nee"
+                },
+                "KOSTEN_EIGEN_AANWERKGEVER" : {
+                    "CAPTION": "Kosten eigen aan de werkgever"
+                },
+                "ANDERE_NETTO_INHOUDINGEN" : {
+                    "CAPTION": "Andere netto inhoudingen"
+                }
+            },
+            "NAVIGATION": {
+                "SIGN_IN_MENU_ITEM": "Sign in",
+                "SIGN_OUT_MENU_ITEM": "Sign out",
+                "BRUTONETTO_MENU_ITEM": "Bruto-Netto",
+                "DASHBOARD_MENU_ITEM": "Dashboard",
+                "DETAILS_MENU_ITEM": "Details",
+                "PROFILE_MENU_ITEM": "Profile"
+            },
+            "AUTHORIZATION": {
+                "SIGN_IN": {
+                    "SIGN_IN_TITLE": "Sign in",
+                    "USER_IDENTIFIER": "E-Mail address",
+                    "USER_IDENTIFIER_PLACEHOLDER": "e-mail address",
+                    "PASSWORD": "Password",
+                    "PASSWORD_PLACEHOLDER": "password",
+                    "SIGN_IN_COMMAND": "Sign in",
+                    "NEW_USER": "New to Angular Origin ?",
+                    "GOTO_SIGN_UP_COMMAND": "Sign up"
+                },
+                "SIGN_UP": {
+                    "SIGN_UP_TITLE": "Sign up",
+                    "IDENTITY_NAME": "Name",
+                    "IDENTITY_NAME_PLACEHOLDER": "name",
+                    "IDENTITY_FIRST_NAME": "First name",
+                    "IDENTITY_FIRST_NAME_PLACEHOLDER": "first name",
+                    "USER_IDENTIFIER": "E-Mail address",
+                    "USER_IDENTIFIER_PLACEHOLDER": "e-mail address",
+                    "PASSWORD": "Password",
+                    "PASSWORD_PLACEHOLDER": "password",
+                    "SIGN_UP_COMMAND": "Sign up",
+                    "ALLREADY_REGISTERED": "Allready registered ?",
+                    "GOTO_SIGN_IN_COMMAND": "Sign in"
+                }
+            },
+            "PROFILE" : {
+                "TITLE": "Profile"
+            }
+        }
+    }
+}

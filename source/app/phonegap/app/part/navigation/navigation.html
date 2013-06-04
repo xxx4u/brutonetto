@@ -1,0 +1,22 @@
+<div ng-controller='navigation.controller' style="width: 100%">
+
+    <div ng-repeat="group in navigationMenu" class="app-menu-group" style="width: 100%;" ng-click="item.select()">
+        <div ui-if="group.groupName" style="display: table; width: 100%">
+            <div style="display: table-row;">
+                <div class="app-menu-group-header" ng-show="APPLICATION_USER_IDENTITY.User.IsAuthenticated" style="display: table-cell; white-space: nowrap;">
+                    {{ group.groupName }}
+                </div>
+            </div>
+        </div> 
+        <div style="display: table; width: 100%">
+            <div ng-repeat="item in group.items" class="app-menu-item" ui-route="#/{{ item.routeMatch }}" ng-class="{active: $uiRoute}" style="display: table-row;" ng-click="item.select()">
+                <div class="indicator" ui-if="hasScope(item.scopes)" style="display: table-cell; white-space: nowrap; font-size: 0.01em; width: 4px;">&nbsp;</div>
+                <div ui-if="hasScope(item.scopes)" style="display: table-cell; width: 54px;">
+                    <img ng-src="{{ item.icon }}" style="width: 54px; height: 54px;" />
+                </div>
+                <div ui-if="hasScope(item.scopes)" style="display: table-cell; white-space: nowrap;" translate>{{ item.caption }}</div>
+            </div>
+        </div>
+    </div>  
+
+</div>

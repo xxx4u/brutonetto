@@ -1,0 +1,61 @@
+<div ng-controller='bruto.netto.parameter.controller'>
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+            
+            <!-- FIRST PAGE COLUMN -->
+            <div class="span1"></div>
+            <div class="span6">
+                <form class="form-horizontal">
+                    <div ng-repeat="parameterGroup in brutoNettoModel.ParameterGroups" app-repeat-done="renderDone()">
+                        <legend>{{ parameterGroup.Caption | translate }}</legend>
+                        <div class="control-group" ng-repeat="parameter in parameterGroup.Parameters" ng-show="parameter.IsVisible">
+                            <label class="control-label" for="{{ parameter.ID }}" ng-show="parameter.IsVisible">{{ parameter.Caption | translate }}</label>
+                            <div class="controls" ng-show="parameter.IsVisible" >
+                                <div ng-switch on="parameter.TYPE" >
+                                    
+                                    <!-- FIXED PARAMETER -->
+                                    <div ng-switch-when="FIXED_PARAMETER">
+                                        <input class="input-xlarge" ng-show="parameter.IsVisible" ng-model="parameter.Value" style="text-align: right;" />
+                                    </div>
+                                    
+                                    <!-- INTEGER PARAMETER -->
+                                    <div ng-switch-when="INTEGER_PARAMETER">
+                                        <input class="input-xlarge" ng-model="parameter.Value" app-select-on-click style="text-align: right;" />
+                                    </div>
+                                    
+                                    <!-- DECIMAL PARAMETER -->
+                                    <div ng-switch-when="DECIMAL_PARAMETER">
+                                        <input class="input-xlarge" placeholder="0,00" ng-model="parameter.Value" ui-event="{ keypress : 'keypressed($event, parameter)' } " app-select-on-click style="text-align: right;" />
+                                    </div>
+                                    
+                                    <!-- TOGGLE PARAMETER -->
+                                    <div ng-switch-when="TOGGLE_PARAMETER">
+                                        <div class="btn-group" data-toggle="buttons-radio">
+                                            <button type="button" class="btn btn-form" ng-class="{ true: 'active' }[parameter.Value == option.ID]" ng-repeat="option in parameter.Options" ng-click="parameter.setValue(option)">{{ option.Caption | translate }}</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- SELECT PARAMETER -->
+                                    <div ng-switch-when="SELECTION_PARAMETER">
+                                        <select class="input-xlarge" ng-model="parameter.Value" ng-options="option.ID as option.Caption | translate for option in parameter.Options"></select>
+                                    </div>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-actions hidden-phone">
+                        <button class="btn btn-primary pull-left" ng-click="calculate()">Bereken</button>
+                    </div>
+                    <button class="btn btn-primary btn-block hidden-desktop hidden-tablet" ng-click="calculate()">Bereken</button>
+                </form>
+                <div  style="padding-bottom: 16px;">&nbsp;</div>
+            </div>
+            
+            <!-- SECOND PAGE COLUMN -->
+            <div class="span4">&nbsp;</div>
+            <div class="span1"></div>
+        </div>
+    </div>
+</div>
