@@ -21,7 +21,7 @@ Application.Controllers.controller('navigation.controller', ['$scope', '$locatio
         ]},
         
         { groupName: 'Account', items: [
-            { id: 'PROFILE_MENU_ITEM', icon: 'media/images/icons/dark/appbar.list.png', routeMatch: 'profile', route: 'profile', scopes: [Application.Model.Security.UserScope.USER, Application.Model.Security.UserScope.ADMINISTRATOR], caption: 'APPLICATION.PART.NAVIGATION.PROFILE_MENU_ITEM', select: function() { self.goToRoute(this.route); } },
+            { id: 'PROFILE_MENU_ITEM', icon: 'media/images/icons/dark/appbar.user.png', routeMatch: 'profile', route: 'profile', scopes: [Application.Model.Security.UserScope.USER, Application.Model.Security.UserScope.ADMINISTRATOR], caption: 'APPLICATION.PART.NAVIGATION.PROFILE_MENU_ITEM', select: function() { self.goToRoute(this.route); } },
             { id: 'SIGN_OUT_MENU_ITEM', icon: 'media/images/icons/dark/appbar.door.leave.png', routeMatch: 'authorization/[a-z]*', route: 'authorization/signout', scopes: [Application.Model.Security.UserScope.USER, Application.Model.Security.UserScope.ADMINISTRATOR], caption: 'APPLICATION.PART.NAVIGATION.SIGN_OUT_MENU_ITEM', select: function() { self.goToRoute(this.route); } }
         ]}
     ];
