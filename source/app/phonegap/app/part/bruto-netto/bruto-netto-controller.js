@@ -5,21 +5,6 @@ Application.Controllers.controller('bruto.netto.controller', ['$scope', '$consta
     
     $scope.brutoNettoModel = new Application.Model.BrutoNetto.BrutoNettoModel();
     
-    $scope.calculate = function() {
-        var dto = $scope.brutoNettoModel.toDataTransferObject();
-        
-        var parameters = angular.toJson(dto); 
-        
-        $dataService.calculateBrutoNetto({ onBehalfOf: $constant.ON_BEHALF_OF_USER }, { parameters: parameters })
-            .then(function(data) {
-                var result = angular.fromJson(data.Result);
-                $scope.brutoNettoModel.Calculation = angular.extend({}, { Bruto: Number(result.Bruto).toFixed(2), Netto: Number(result.Netto).toFixed(2) });
-                $scope.$state.transitionTo('brutonetto.calculation', $scope.$stateParams);
-            }, function(error) {
-                console.log(error);
-            });
-    };
-    
     $scope.renderDone = function() {
         $scope.$emit('event:application:resize-requested');
     };

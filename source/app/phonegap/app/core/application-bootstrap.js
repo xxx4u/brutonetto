@@ -1,11 +1,12 @@
 'use strict';
 
 // Create the module namespaces.
-Application.Bootstrap = angular.module('application.bootstrap', ['application.filters', 'application.services', 'application.directives', 'application.constants', 'application.settings', 'application.controllers', 'ui.compat', 'ui', 'pascalprecht.translate']);
+Application.Bootstrap = angular.module('application.bootstrap', ['application.filters', 'application.services', 'application.directives', 'application.constants', 'application.settings', 'application.controllers', 'ui.compat', 'ui', 'pascalprecht.translate', 'app.interval']);
 Application.Constants = angular.module('application.constants', []);
 Application.Services = angular.module('application.services', []);
 Application.Filters = angular.module('application.filters', []);
 Application.Directives = angular.module('application.directives', []);
+Application.Providers = angular.module('application.providers', []);
 Application.Settings = angular.module('application.settings', ['application.constants']);
 Application.Controllers = angular.module('application.controllers', ['application.settings']);
 

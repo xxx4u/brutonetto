@@ -14,9 +14,8 @@ Application.Controllers.controller('application.controller', ['$scope', '$route'
     
     $scope.$on('event:application:resize-requested', function (event, next, current) {
         setTimeout(function() {
-            console.log('event:application:resize-requested');
             self.resize();
-        }, 1000);
+        }, 200);
     });
 
 

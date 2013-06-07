@@ -43,9 +43,9 @@
 @sansFontFamily: 'ApplicationFont', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 @serifFontFamily: Georgia, 'Times New Roman', Times, serif;
 @monoFontFamily: Monaco, Menlo, Consolas, 'Courier New', monospace;
-@baseFontSize: 14px;
+@baseFontSize: 11px;
 @baseFontFamily: @sansFontFamily;
-@baseLineHeight: 20px;
+@baseLineHeight: 16px;
 @altFontFamily: @serifFontFamily;
 @headingsFontFamily: inherit;
 @headingsFontWeight: bold;
@@ -65,13 +65,13 @@
 @btnBackground: darken(@white, 5%);
 @btnBackgroundHighlight: darken(@btnBackground, 8%);
 @btnBorder: darken(@btnBackground, 15%);
-@btnPrimaryBackground: #ff5715;
+@btnPrimaryBackground: #F6AC13;
 @btnPrimaryBackgroundHighlight: darken(@btnPrimaryBackground, 10%);
 @btnInfoBackground: #5bc0de;
 @btnInfoBackgroundHighlight: darken(@btnInfoBackground, 10%);
 @btnSuccessBackground: #62c462;
 @btnSuccessBackgroundHighlight: darken(@btnSuccessBackground, 10%);
-@btnWarningBackground: lighten(@orange, 15%);
+@btnWarningBackground: lighten(#ff5715, 15%);
 @btnWarningBackgroundHighlight: darken(@btnWarningBackground, 10%);
 @btnDangerBackground: #bd362f;
 @btnDangerBackgroundHighlight: darken(@btnDangerBackground, 10%);
@@ -87,7 +87,7 @@
 @dropdownLinkColor: @grayDark;
 @dropdownLinkColorHover: @white;
 @dropdownLinkColorActive: @white;
-@dropdownLinkBackgroundActive: @linkColor;
+@dropdownLinkBackgroundActive: @btnPrimaryBackground;
 @dropdownLinkBackgroundHover: @dropdownLinkBackgroundActive;
 
 
@@ -182,12 +182,12 @@
 @zindexFixedNavbar: 1030;
 @zindexModalBackdrop: 1040;
 @zindexModal: 1050;
-@navbarInverseBackground: #111111;
-@navbarInverseBackgroundHighlight: #222222;
-@navbarInverseBorder: #252525;
-@navbarInverseText: @grayLight;
-@navbarInverseLinkColor: @grayLight;
-@navbarInverseLinkColorHover: @white;
+@navbarInverseBackground: #F4CB77;
+@navbarInverseBackgroundHighlight: darken(@navbarInverseBackground, 15%);
+@navbarInverseBorder: darken(@navbarInverseBackgroundHighlight, 15%);
+@navbarInverseText: @black;
+@navbarInverseLinkColor: @black;
+@navbarInverseLinkColorHover: @grayDark;
 @navbarInverseLinkColorActive: @navbarInverseLinkColorHover;
 @navbarInverseLinkBackgroundHover: transparent;
 @navbarInverseLinkBackgroundActive: @navbarInverseBackground;

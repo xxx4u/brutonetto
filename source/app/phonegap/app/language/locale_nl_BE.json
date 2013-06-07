@@ -3,6 +3,8 @@
         "INFO_LABEL": "Info",
         "WARNING_LABEL": "Waarschuwing",
         "ERROR_LABEL": "Fout",
+        "YES": "Ja",
+        "NO": "Nee",
         "CONTROLLER": {
             "LANGUAGE_MENU_ITEM": "Taal"
         },
@@ -26,6 +28,9 @@
                 },
                 "VERGOEDING_INHOUDING": { 
                     "CAPTION":"Vergoedingen en inhoudingen"
+                },
+                "TRANSPORTVERGOEDING": { 
+                    "CAPTION":"Transportvergoeding"
                 },
                 "BEREKENINGSWIJZE": { 
                     "CAPTION": "Berekeningswijze",
@@ -59,7 +64,12 @@
                     "CAPTION": "Werkdagen per week"
                 },
                 "BEROEPS_INKOMEN_PARTNER" : {
-                    "CAPTION": "Beroepsinkomen partner"
+                    "CAPTION": "Beroepsinkomen partner",
+                    "GEEN_BEROEPSINKOMEN": "Geen broepsinkomen",
+                    "BEROEPSINKOMEN_BOVEN_LAGE_GRENS": "Beroepsinkomen boven lage grens",
+                    "NIET_PENSIOENINKOMEN_BOVEN_LAGE_GRENS": "Niet pensioeninkomen boven lage grens",
+                    "ENKEL_PENSIOEN_ONDER_LAGE_GRENS": "Enkel pensioen onder lage grens",
+                    "ENKEL_PENSIOEN_ONDER_ZEER_LAGE_GRENS": "Enkel pensioen onder zeer lage grens"
                 },
                 "VALIDE_KINDEREN" : {
                     "CAPTION": "Valide kinderen"
@@ -99,6 +109,15 @@
                 },
                 "ANDERE_NETTO_INHOUDINGEN" : {
                     "CAPTION": "Andere netto inhoudingen"
+                },
+                "TRANSPORTWIJZE" : {
+                    "CAPTION": "Transportwijze",
+                    "OPENBAAR_VERVOER": "Openbaar vervoer",
+                    "FIETS": "Fiets",
+                    "EIGEN_VERVOER": "Eigen vervoer"
+                },
+                "AANTAL_KILOMETER" : {
+                    "CAPTION": "Aantal kilometer"
                 }
             },
             "NAVIGATION": {

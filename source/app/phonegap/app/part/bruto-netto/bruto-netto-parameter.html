@@ -5,11 +5,22 @@
             
             <!-- FIRST PAGE COLUMN -->
             <div class="span1"></div>
-            <div class="span6">
+            <div class="span6">               
                 <form class="form-horizontal">
                     <div ng-repeat="parameterGroup in brutoNettoModel.ParameterGroups" app-repeat-done="renderDone()">
-                        <legend>{{ parameterGroup.Caption | translate }}</legend>
-                        <div class="control-group" ng-repeat="parameter in parameterGroup.Parameters" ng-show="parameter.IsVisible">
+                        <legend>
+                            <span>
+                                <span>
+                                    {{ parameterGroup.Caption | translate }}
+                                </span>
+                                <span class="btn btn-switch pull-right" ui-if="parameterGroup.IsOptional" ng-click="parameterGroup.IsSelected=!parameterGroup.IsSelected" ng-model="parameterGroup.IsSelected">
+                                    <span class="btn-default btn-switch-on" ng-show="parameterGroup.IsSelected" translate>APPLICATION.YES</span>
+                                    <span class="btn-default btn-switch-off" ng-hide="parameterGroup.IsSelected" translate>APPLICATION.NO</span>  
+                                </span> 
+                            </span>
+                        </legend>
+                        
+                        <div class="control-group" ng-repeat="parameter in parameterGroup.Parameters" ng-show="parameter.IsVisible && parameterGroup.IsSelected">
                             <label class="control-label" for="{{ parameter.ID }}" ng-show="parameter.IsVisible">{{ parameter.Caption | translate }}</label>
                             <div class="controls" ng-show="parameter.IsVisible" >
                                 <div ng-switch on="parameter.TYPE" >
@@ -46,9 +57,9 @@
                         </div>
                     </div>
                     <div class="form-actions hidden-phone">
-                        <button class="btn btn-primary pull-left" ng-click="calculate()">Bereken</button>
+                        <button class="btn btn-primary pull-left" ng-click="goToCalculate()">Bereken</button>
                     </div>
-                    <button class="btn btn-primary btn-block hidden-desktop hidden-tablet" ng-click="calculate()">Bereken</button>
+                    <button class="btn btn-primary btn-block hidden-desktop hidden-tablet" ng-click="goToCalculate()">Bereken</button>
                 </form>
                 <div  style="padding-bottom: 16px;">&nbsp;</div>
             </div>

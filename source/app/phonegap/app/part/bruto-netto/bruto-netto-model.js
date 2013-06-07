@@ -84,6 +84,8 @@ Application.Model.BrutoNetto.BrutoNettoModel = Application.Core.ObjectBase.exten
                 }
             });
         
+        console.log(result);
+        
         return result;
     },
     
@@ -174,10 +176,17 @@ Application.Model.BrutoNetto.BrutoNettoModel = Application.Core.ObjectBase.exten
                     ]
                 }),
                 
-                new Application.Model.BrutoNetto.DecimalParameter({
+                new Application.Model.BrutoNetto.SelectionParameter({
                     ID: 'BEROEPSINKOMENPARTNER',
                     Caption: 'APPLICATION.PART.BRUTONETTO.BEROEPS_INKOMEN_PARTNER.CAPTION',
-                    Value: '0.00'
+                    Value: 'GEENBEROEPSINKOMEN',
+                    Options: [
+                        { ID:'GEENBEROEPSINKOMEN', Caption: 'APPLICATION.PART.BRUTONETTO.BEROEPS_INKOMEN_PARTNER.GEEN_BEROEPSINKOMEN' },
+                        { ID:'BEROEPSINKOMENBOVENLAGEGRENS', Caption: 'APPLICATION.PART.BRUTONETTO.BEROEPS_INKOMEN_PARTNER.BEROEPSINKOMEN_BOVEN_LAGE_GRENS' },
+                        { ID:'NIETPENSIOENINKOMENBOVENLAGEGRENS', Caption: 'APPLICATION.PART.BRUTONETTO.BEROEPS_INKOMEN_PARTNER.NIET_PENSIOENINKOMEN_BOVEN_LAGE_GRENS' },
+                        { ID:'ENKELPENSIOENONDERLAGEGRENS', Caption: 'APPLICATION.PART.BRUTONETTO.BEROEPS_INKOMEN_PARTNER.ENKEL_PENSIOEN_ONDER_LAGE_GRENS' },
+                        { ID:'ENKELPENSIOENONDERZEERLAGEGRENS', Caption: 'APPLICATION.PART.BRUTONETTO.BEROEPS_INKOMEN_PARTNER.ENKEL_PENSIOEN_ONDER_ZEER_LAGE_GRENS' }
+                    ]
                 }),
                 
                 new Application.Model.BrutoNetto.ToggleParameter({
@@ -246,10 +255,35 @@ Application.Model.BrutoNetto.BrutoNettoModel = Application.Core.ObjectBase.exten
                     Value: '0.00'
                 })
             ]
+        }),
+                
+        new Application.Model.BrutoNetto.ParameterGroup({
+            ID: 'TRANSPORTVERGOEDING',
+            Caption: 'APPLICATION.PART.BRUTONETTO.TRANSPORTVERGOEDING.CAPTION',
+            IsOptional: true,
+            IsSelected: false,
+            Parameters: [
+                new Application.Model.BrutoNetto.SelectionParameter({
+                    ID: 'TRANSPORTWIJZE',
+                    Caption: 'APPLICATION.PART.BRUTONETTO.TRANSPORTWIJZE.CAPTION',
+                    Value: 'OPENBAARVERVOER',
+                    Options: [
+                        { ID:'OPENBAARVERVOER', Caption: 'APPLICATION.PART.BRUTONETTO.TRANSPORTWIJZE.OPENBAAR_VERVOER' },
+                        { ID:'FIETS', Caption: 'APPLICATION.PART.BRUTONETTO.TRANSPORTWIJZE.FIETS' },
+                        { ID:'EIGENVERVOER', Caption: 'APPLICATION.PART.BRUTONETTO.TRANSPORTWIJZE.EIGEN_VERVOER' }
+                    ]
+                }),
+                
+                new Application.Model.BrutoNetto.DecimalParameter({
+                    ID: 'AANTALKILOMETER',
+                    Caption: 'APPLICATION.PART.BRUTONETTO.AANTAL_KILOMETER.CAPTION',
+                    Value: '0.00'
+                })
+            ]
         })
     ],
     Calculation: {
-        Bruto: 0,
-        Netto: 0
+        Bruto: null,
+        Netto: null
     }
 });

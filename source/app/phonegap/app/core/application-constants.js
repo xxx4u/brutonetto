@@ -4,7 +4,6 @@ Application.Constants.constant('$constant', {
     
     DEFAULT_LOCALE: 'en_US',
     
-    RESOURCE_ENDPOINT : 'http://localhost:53898/api/1.0/resource/',
     DATA_SERVICE_ENDPOINT : 'http://localhost:53898/api/1.0/data/',
     
     LOCAL_STORAGE: 'LOCAL',
@@ -29,7 +28,7 @@ Application.Constants.constant('$constant', {
     LOG_LEVEL_INFO: '40.INFO',
     LOG_LEVEL_DEBUG: '50.DEBUG',
     
-    DEFAULT_LOG_LEVEL: '20.ERROR',
+    DEFAULT_LOG_LEVEL: '50.DEBUG',
     DEFAULT_LOGGER_STRATEGY: 'ConsoleLoggerStrategy'
     
 });

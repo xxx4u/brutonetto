@@ -24,7 +24,7 @@ namespace Membrane.Web.Public.Areas.Api.Controllers
 		/// <summary>
 		/// The default BRUTO-NETOO service URL.
 		/// </summary>
-	    private const string BRUTO_NETTO_SERVICE_URL = "https://brutnet.attentia.be/GetBrutoNettoBerekening?onlyValidate=true";
+	    private const string BRUTO_NETTO_SERVICE_URL = "https://brutnet.attentia.be/GetBrutoNettoBerekening";
 
 	    #endregion
 
