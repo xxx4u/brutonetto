@@ -130,7 +130,7 @@
             },
             "AUTHORIZATION": {
                 "SIGN_IN": {
-                    "SIGN_IN_TITLE": "Sign in",
+                    "CAPTION": "Sign in",
                     "USER_IDENTIFIER": "E-Mail address",
                     "USER_IDENTIFIER_PLACEHOLDER": "e-mail address",
                     "PASSWORD": "Password",
@@ -140,7 +140,7 @@
                     "GOTO_SIGN_UP_COMMAND": "Sign up"
                 },
                 "SIGN_UP": {
-                    "SIGN_UP_TITLE": "Sign up",
+                    "CAPTION": "Sign up",
                     "IDENTITY_NAME": "Name",
                     "IDENTITY_NAME_PLACEHOLDER": "name",
                     "IDENTITY_FIRST_NAME": "First name",
@@ -152,10 +152,13 @@
                     "SIGN_UP_COMMAND": "Sign up",
                     "ALLREADY_REGISTERED": "Allready registered ?",
                     "GOTO_SIGN_IN_COMMAND": "Sign in"
+                },
+                "SIGN_OUT": {
+                    "CAPTION": "Sign out"
                 }
             },
             "PROFILE" : {
-                "TITLE": "Profile"
+                "CAPTION": "Profile"
             }
         }
     }

@@ -225,7 +225,7 @@ namespace Membrane.Domain.Agent
 						repository.Query()
 							.Fetch(x => x.UserScopes).Eager
 							.Fetch(x => x.UserIdentities).Eager
-							.Where(x => x.Identifier == identifier)
+							.Where(x => x.Identifier.IsInsensitiveLike(identifier, MatchMode.Exact))
 							.And(x => x.Password == password)
 							.WithSubquery.WhereProperty(x => x.ID).In(subQuery)
 							.TransformUsing(Transformers.DistinctRootEntity);
@@ -249,7 +249,7 @@ namespace Membrane.Domain.Agent
 				{
 					var subQuery =
 						QueryOver.Of<OAuth2User>()
-							.Where(x => x.Identifier == identifier)
+							.Where(x => x.Identifier.IsInsensitiveLike(identifier,MatchMode.Exact))
 						// Just keep the USER.ID to use in the query.
 							.Select(t => t.ID);
 
@@ -328,8 +328,8 @@ namespace Membrane.Domain.Agent
 			{
 				var subQuery =
 					QueryOver.Of<OAuth2User>()
-						.Where(x => x.Identifier == identifier)
-					// Just keep the USER.ID to use in the query.
+						.Where(x => x.Identifier.IsInsensitiveLike(identifier, MatchMode.Exact))
+						// Just keep the USER.ID to use in the query.
 						.Select(t => t.ID);
 
 				var userIdentityQuery =

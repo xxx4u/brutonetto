@@ -35,18 +35,17 @@ Application.Controllers.controller('application.controller', ['$scope', '$route'
     // CONTROLLER --------------------------------------------------------------------------------------------------------
     
     self.initialize = function () {        
-        $('.scrollIndicator').scrollIndicator();
+        //$('.scrollIndicator').scrollIndicator();
+        $('#scrollable-content').niceScroll({cursorcolor:'#a0a0a0', cursorborder: '#a0a0a0', cursoropacitymax: 0.5, cursorborderradius: '0px', scrollspeed: 30});
 
         $.slidePage({
             action: 'init',
             toggle: '.app-menu-toggle',
             sidepanel: '#sidePanel',
             speed: 150,
-            visibilityChanging: function () {
-                $('.scrollIndicator').scrollIndicator({ action: 'resize' });
+            visibilityChanging: function () {              
             },
             visibilityChanged: function () {
-                $('.scrollIndicator').scrollIndicator({ action: 'resize' });
                 self.resize();
             }
         });
@@ -73,7 +72,11 @@ Application.Controllers.controller('application.controller', ['$scope', '$route'
             var $app_body_content = $('.app-body-content');
             $app_body_content.height($content.height() - $app_nav_menu.height());
 
-            $('.scrollIndicator').scrollIndicator({ action: 'resize' });
+            //$('.scrollIndicator').scrollIndicator({ action: 'resize' });
+            
+            setTimeout(function() {
+                $('#scrollable-content').getNiceScroll().resize();
+            }, 1000);
         }, 10);
     };
 

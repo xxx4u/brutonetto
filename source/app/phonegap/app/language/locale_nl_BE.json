@@ -130,7 +130,7 @@
             },
             "AUTHORIZATION": {
                 "SIGN_IN": {
-                    "SIGN_IN_TITLE": "Aanmelden",
+                    "CAPTION": "Aanmelden",
                     "USER_IDENTIFIER": "E-Mail adres",
                     "USER_IDENTIFIER_PLACEHOLDER": "e-mail adres",
                     "PASSWORD": "Paswoord",
@@ -140,7 +140,7 @@
                     "GOTO_SIGN_UP_COMMAND": "Registreren"
                 },
                 "SIGN_UP": {
-                    "SIGN_UP_TITLE": "Registreren",
+                    "CAPTION": "Registreren",
                     "IDENTITY_NAME": "Naam",
                     "IDENTITY_NAME_PLACEHOLDER": "naam",
                     "IDENTITY_FIRST_NAME": "Voornaam",
@@ -152,10 +152,13 @@
                     "SIGN_UP_COMMAND": "Registreren",
                     "ALLREADY_REGISTERED": "Bent u reeds geregistreerd ?",
                     "GOTO_SIGN_IN_COMMAND": "Aanmelden"
+                },
+                "SIGN_OUT": {
+                    "CAPTION": "Afmelden"
                 }
             },
             "PROFILE" : {
-                "TITLE": "Profiel"
+                "CAPTION": "Profiel"
             }
         }
     }

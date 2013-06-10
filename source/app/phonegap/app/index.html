@@ -35,7 +35,7 @@
                         </div>
                     </div>
                 </nav>
-                <div class="app-body-content scrollIndicator" style="background: url('media/images/logo/attentia.logo.background.png') no-repeat left top;">
+                <div id="scrollable-content" class="app-body-content" style="overflow: auto; background: url('media/images/logo/attentia.logo.background.png') no-repeat left top;">
                     <div ui-view></div>                
                 </div>
             </div>
@@ -48,7 +48,7 @@
                         <span class="app-menu-header-text">&nbsp;</span>
                     </span>
                 </div>
-                <div class="app-sidepanel-body scrollIndicator">
+                <div class="app-sidepanel-body">
                     <ng:include src="'part/navigation/navigation.html'"></ng:include>
                 </div>
             </div>
@@ -64,7 +64,7 @@
         <script src="lib/jquery-plugin/jquery.json.js" type="text/javascript"></script>
         <script src="lib/jquery-plugin/jquery.maskedinput.js" type="text/javascript"></script>
         <script src="lib/jquery-plugin/jquery.slidePage.js" type="text/javascript"></script>
-        <script src="lib/jquery-plugin/jquery.scrollIndicator.js" type="text/javascript"></script>
+        <script src="lib/jquery-plugin/jquery.niceScroll.js" type="text/javascript"></script>
         
         <script src="lib/store/store2.js" type="text/javascript"></script>
         <script src="lib/linq/linq.js" type="text/javascript"></script>

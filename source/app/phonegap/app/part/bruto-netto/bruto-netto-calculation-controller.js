@@ -40,7 +40,7 @@ Application.Controllers.controller('bruto.netto.calculation.controller', ['$scop
         $scope.progress = 0;
         var job = $interval(function() {
             $scope.progress =  $scope.progress + 1;
-        }, 100, 100, true).stop();
+        }, 300, 100, true).stop();
         
         setTimeout(function() {
             if (!$scope.brutoNettoModel.Calculation.Bruto && ! $scope.brutoNettoModel.Calculation.Netto) { job.start() };
