@@ -12,13 +12,33 @@ Application.Logger.Strategy.ConsoleLoggerStrategy = function() {
     }
     
     LoggerStrategy.prototype.log = function(event) {
+        var self = this;
+        var MAX_EVENTS = 100;
+        
+        self.events.push(event);
+        
+        if (self.events.length > MAX_EVENTS){
+            self.events =
+                Enumerable.From(self.events)
+                    .OrderByDescending(function(x) { return x.timestamp; })
+                    .Take(MAX_EVENTS)
+                    .OrderBy(function(x) { return x.timestamp; })
+                    .ToArray();
+        }
+        
         console.log(event);
     };
+    
+    LoggerStrategy.prototype.getLogEvents = function(event) {
+        var self = this;
+        
+        return self.events;
+    }
     
     return new LoggerStrategy();
 };
 
-Application.Services.factory('$loggerFactory', ['$constant', '$configuration', function($constant, $configuration) {
+Application.Services.factory('$loggerFactory', ['$rootScope', '$constant', '$configuration', function($scope, $constant, $configuration) {
 
     function LoggerFactory() {
         var self = this;
@@ -44,7 +64,21 @@ Application.Services.factory('$loggerFactory', ['$constant', '$configuration', f
             if (self.loggerStrategy && event.level <= self.level) { 
                self.loggerStrategy.log(_event);
             }
-        };            
+            
+            var logEvents = self.getLogEvents();
+            $scope.$broadcast('event:application:log-events-changed', logEvents);
+        };
+        
+        Logger.prototype.getLogEvents = function() {
+            var self = this;
+            
+            var logEvents = [];
+            if (self.loggerStrategy) { 
+               logEvents = self.loggerStrategy.getLogEvents();
+            }
+            
+            return logEvents;
+        }
         
         return new Logger();
     }

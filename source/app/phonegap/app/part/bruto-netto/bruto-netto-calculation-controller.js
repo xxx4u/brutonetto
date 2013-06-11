@@ -32,8 +32,8 @@ Application.Controllers.controller('bruto.netto.calculation.controller', ['$scop
     };
     
     $scope.goToParameters = function() {
-        $scope.brutoNettoModel.Calculation = angular.extend({}, { Bruto: null, Netto: null });   
-        $scope.$state.transitionTo('brutonetto.parameter', $scope.$stateParams);
+        $scope.brutoNettoModel.Calculation = angular.extend({}, { Bruto: null, Netto: null });
+        $scope.$state.transitionTo('brutonetto.parameter-' + $scope.view.mode, $scope.$stateParams);
     };
     
     self.enableProgressNotification = function($scope) {

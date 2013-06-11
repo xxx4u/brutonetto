@@ -3,7 +3,7 @@ Application.Controllers.controller('startup.controller', ['$scope', '$location',
     
     // CONTROLLER --------------------------------------------------------------------------------------------------------
     if ($scope.APPLICATION_USER_IDENTITY.User.IsAuthenticated) {
-        $scope.$state.transitionTo('brutonetto.parameter', $scope.$stateParams);
+        $scope.$state.transitionTo('brutonetto.parameter-quick', $scope.$stateParams);
     }
     else {
         $scope.$state.transitionTo('authorization.signin', $scope.$stateParams);

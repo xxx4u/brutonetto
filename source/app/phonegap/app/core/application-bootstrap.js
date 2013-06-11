@@ -78,11 +78,19 @@ Application.Bootstrap
                 abstract: true,
                 templateUrl: 'part/bruto-netto/bruto-netto.html'
             })
-            .state('brutonetto.parameter', {
-                url: '/parameter',
+            .state('brutonetto.parameter-quick', {
+                url: '/parameter/quick',
                 views: {
                     'body@brutonetto': {
-                        templateUrl: 'part/bruto-netto/bruto-netto-parameter.html'
+                        templateUrl: 'part/bruto-netto/bruto-netto-parameter-quick.html'
+                  }
+                }
+            })
+            .state('brutonetto.parameter-extended', {
+                url: '/parameter/extended',
+                views: {
+                    'body@brutonetto': {
+                        templateUrl: 'part/bruto-netto/bruto-netto-parameter-extended.html'
                   }
                 }
             })
@@ -99,6 +107,11 @@ Application.Bootstrap
                 abstract: false,
                 templateUrl: 'part/profile/profile.html'
             })
+            .state('debug', {
+                url: '/debug',
+                abstract: false,
+                templateUrl: 'part/debug/debug.html'
+            })
             ;
         
 	}])
@@ -112,10 +125,6 @@ Application.Bootstrap
         
         // The LOGGER service.
         $rootScope.$logger = $logger;
-        
-        var userIdentityJSON = $configuration.get($constant.LOCAL_STORAGE, 'application.security.profile.userIdentity', angular.toJson(Application.Model.Security.UserIdentity.$createGuestUserIdentity()));
-        var userIdentity = angular.fromJson(userIdentityJSON);
-        $rootScope.APPLICATION_USER_IDENTITY = new Application.Model.Security.UserIdentity(userIdentity);
         
         $rootScope.$watch('APPLICATION_USER_IDENTITY', function(newValue, oldValue) { 
             $rootScope.$broadcast('event:authorization:user-identity-changed', newValue);
@@ -179,6 +188,7 @@ Application.Bootstrap
         
         $rootScope.$on('event:authorization:user-identity-changed', function(event, userIdentity) {
             $configuration.set($constant.LOCAL_STORAGE, 'application.security.profile.userIdentity', angular.toJson(userIdentity));
+            $rootScope.$logger.log({level: $constant.LOG_LEVEL_INFO, message: 'event:authorization:user-identity-changed', data: userIdentity});
         });
         
         // Handles the USER ACCESS TOKEN REQUESTED event.
@@ -248,6 +258,12 @@ Application.Bootstrap
             }
         });
         
+        $rootScope.$emit('event:authorization:client-access-token-requested');
+        
+        var userIdentityJSON = $configuration.get($constant.LOCAL_STORAGE, 'application.security.profile.userIdentity', angular.toJson(Application.Model.Security.UserIdentity.$createGuestUserIdentity()));
+        var userIdentity = angular.fromJson(userIdentityJSON);
+        $rootScope.APPLICATION_USER_IDENTITY = new Application.Model.Security.UserIdentity(userIdentity);
+        
         $rootScope.getSupportedLocales = function() {
             var locales = [{
                 code: "en_US", 
@@ -262,8 +278,5 @@ Application.Bootstrap
             }];
             
             return locales;
-        };
-        
-        $rootScope.$emit('event:authorization:client-access-token-requested');
-        
+        };        
     });

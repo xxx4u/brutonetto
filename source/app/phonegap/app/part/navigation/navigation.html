@@ -1,7 +1,7 @@
 <div ng-controller='navigation.controller' style="width: 100%">
 
     <div ng-repeat="group in navigationMenu" class="app-menu-group" style="width: 100%;" ng-click="item.select()">
-        <div ui-if="group.groupName" style="display: table; width: 100%">
+        <div ui-if="group.groupName != '' && group.groupName != null" style="display: table; width: 100%">
             <div style="display: table-row;">
                 <div class="app-menu-group-header" ng-show="APPLICATION_USER_IDENTITY.User.IsAuthenticated" style="display: table-cell; white-space: nowrap;">
                     {{ group.groupName }}

@@ -11,6 +11,7 @@
         "PART" : {
             "BRUTONETTO": {
                 "CAPTION": "Bruto-netto", 
+                "USE_EXTENDED_PARAMETERS": "Gebruik de uitgebreide parameters",
                 "BEREKEND_BRUTOLOON": { 
                     "CAPTION":"Bruto"
                 },        
@@ -126,7 +127,8 @@
                 "BRUTONETTO_MENU_ITEM": "Bruto-Netto",
                 "DASHBOARD_MENU_ITEM": "Dashboard",
                 "DETAILS_MENU_ITEM": "Details",
-                "PROFILE_MENU_ITEM": "Profile"
+                "PROFILE_MENU_ITEM": "Profile",
+                "DEBUG_MENU_ITEM": "Debug"
             },
             "AUTHORIZATION": {
                 "SIGN_IN": {
@@ -158,7 +160,24 @@
                 }
             },
             "PROFILE" : {
-                "CAPTION": "Profile"
+                "CAPTION": "Profile",
+                "IDENTITY_NAME": "Name",
+                "IDENTITY_NAME_PLACEHOLDER": "name",
+                "IDENTITY_FIRST_NAME": "First name",
+                "IDENTITY_FIRST_NAME_PLACEHOLDER": "first name",
+                "USER_IDENTIFIER": "E-Mail address",
+                "USER_IDENTIFIER_PLACEHOLDER": "e-mail address",
+                "PASSWORD": "Password",
+                "PASSWORD_PLACEHOLDER": "password",
+                "SAVE_COMMAND": "Save"
+            },
+            "DEBUG" : {
+                "CAPTION": "Debug",
+                "LOG_EVENT": "Log event",
+                "TIMESTAMP": "Timestamp",
+                "LEVEL": "Level",
+                "MESSAGE": "Message",
+                "DATA": "Data"
             }
         }
     }

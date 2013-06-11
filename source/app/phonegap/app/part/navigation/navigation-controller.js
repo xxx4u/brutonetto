@@ -17,11 +17,12 @@ Application.Controllers.controller('navigation.controller', ['$scope', '$locatio
         ]},
         
         { groupName: null, items: [
-            { id: 'BRUTO_NETTO_MENU_ITEM', icon: 'media/images/icons/dark/appbar.currency.euro.png', routeMatch: 'brutonetto/parameter', route: 'brutonetto/parameter', scopes: [Application.Model.Security.UserScope.USER, Application.Model.Security.UserScope.ADMINISTRATOR], caption: 'APPLICATION.PART.NAVIGATION.BRUTONETTO_MENU_ITEM', select: function() { self.goToRoute(this.route); } }
+            { id: 'BRUTO_NETTO_MENU_ITEM', icon: 'media/images/icons/dark/appbar.currency.euro.png', routeMatch: 'brutonetto/parameter/[a-z]*', route: 'brutonetto/parameter', scopes: [Application.Model.Security.UserScope.USER, Application.Model.Security.UserScope.ADMINISTRATOR], caption: 'APPLICATION.PART.NAVIGATION.BRUTONETTO_MENU_ITEM', select: function() { self.goToRoute(this.route); } }
         ]},
         
-        { groupName: 'Account', items: [
+        { groupName: ' ', items: [
             { id: 'PROFILE_MENU_ITEM', icon: 'media/images/icons/dark/appbar.user.png', routeMatch: 'profile', route: 'profile', scopes: [Application.Model.Security.UserScope.USER, Application.Model.Security.UserScope.ADMINISTRATOR], caption: 'APPLICATION.PART.NAVIGATION.PROFILE_MENU_ITEM', select: function() { self.goToRoute(this.route); } },
+            { id: 'DEBUG_MENU_ITEM', icon: 'media/images/icons/dark/appbar.radioactive.png', routeMatch: 'debug', route: 'debug', scopes: [Application.Model.Security.UserScope.USER, Application.Model.Security.UserScope.ADMINISTRATOR], caption: 'APPLICATION.PART.NAVIGATION.DEBUG_MENU_ITEM', select: function() { self.goToRoute(this.route); } },
             { id: 'SIGN_OUT_MENU_ITEM', icon: 'media/images/icons/dark/appbar.door.leave.png', routeMatch: 'authorization/[a-z]*', route: 'authorization/signout', scopes: [Application.Model.Security.UserScope.USER, Application.Model.Security.UserScope.ADMINISTRATOR], caption: 'APPLICATION.PART.NAVIGATION.SIGN_OUT_MENU_ITEM', select: function() { self.goToRoute(this.route); } }
         ]}
     ];
