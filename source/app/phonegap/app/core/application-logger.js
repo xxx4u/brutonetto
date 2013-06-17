@@ -58,7 +58,7 @@ Application.Services.factory('$loggerFactory', ['$rootScope', '$constant', '$con
             var self = this;
             
             var level = event.level ? event.level.split('.')[1] : 'UNSPECIFIED';        
-            var _event = angular.extend({ timestamp: new Date().toISOString(), level: $constant.LOG_LEVEL_INFO, message: null, data: null }, { level: level, message: event.message, data: event.data });
+            var _event = angular.extend({ id: Guid.newGuid(), timestamp: new Date().toISOString(), level: $constant.LOG_LEVEL_INFO, message: null, data: null }, { level: level, message: event.message, data: event.data });
             
             // The event is logged in case there is a logging strategy and the level is equal or lower then the current log level.
             if (self.loggerStrategy && event.level <= self.level) { 

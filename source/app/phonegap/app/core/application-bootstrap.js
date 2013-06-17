@@ -1,7 +1,7 @@
 'use strict';
 
 // Create the module namespaces.
-Application.Bootstrap = angular.module('application.bootstrap', ['application.filters', 'application.services', 'application.directives', 'application.constants', 'application.settings', 'application.controllers', 'ui.compat', 'ui', 'pascalprecht.translate', 'app.interval']);
+Application.Bootstrap = angular.module('application.bootstrap', ['application.filters', 'application.services', 'application.directives', 'application.constants', 'application.settings', 'application.controllers', 'ui.compat', 'ui', 'pascalprecht.translate', 'app.interval', 'app.bootstrap']);
 Application.Constants = angular.module('application.constants', []);
 Application.Services = angular.module('application.services', []);
 Application.Filters = angular.module('application.filters', []);
@@ -102,6 +102,14 @@ Application.Bootstrap
                   }
                 }
             })
+            .state('brutonetto.error', {
+                url: '/error',
+                views: {
+                    'body@brutonetto': {
+                        templateUrl: 'part/bruto-netto/bruto-netto-error.html'
+                  }
+                }
+            })
             .state('profile', {
                 url: '/profile',
                 abstract: false,
@@ -109,6 +117,11 @@ Application.Bootstrap
             })
             .state('debug', {
                 url: '/debug',
+                abstract: false,
+                templateUrl: 'part/debug/debug.html'
+            })
+            .state('debug.detail', {
+                url: '^/debug/{id}',
                 abstract: false,
                 templateUrl: 'part/debug/debug.html'
             })

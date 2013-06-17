@@ -4,13 +4,17 @@
         "WARNING_LABEL": "Warning",
         "ERROR_LABEL": "Error",
         "YES": "Yes",
-        "NO": "No",        
+        "NO": "No", 
+        "PREVIOUS": "Previous",
+        "NEXT": "Next",        
+        "CLOSE": "Close",        
         "CONTROLLER": {
             "LANGUAGE_MENU_ITEM": "Language"
         },
         "PART" : {
             "BRUTONETTO": {
                 "CAPTION": "Bruto-netto", 
+                "CALCULATION_ERROR_MESSAGE" : "Ooops ... the calculation service is a bit wonky at this moment",
                 "USE_EXTENDED_PARAMETERS": "Gebruik de uitgebreide parameters",
                 "BEREKEND_BRUTOLOON": { 
                     "CAPTION":"Bruto"
@@ -55,8 +59,13 @@
                     "GESCHEIDEN_WETTELIJK": "Wettelijk gescheiden",
                     "GESCHEIDEN_FEITELIJK": "Feitelijk gescheiden"
                 },
+                "MAAND_OF_UURLOON_TYPE": { 
+                    "CAPTION": "Maand- of uurloon",
+                    "UURLOON": "Uurloon",
+                    "MAANDLOON": "Maandloon"
+                },
                 "MAAND_OF_UURLOON": { 
-                    "CAPTION": "Uur- of maandloon"
+                    "CAPTION": "Loon"
                 },
                 "UREN_PER_WEEK": {
                     "CAPTION": "Uren per week"
@@ -115,10 +124,10 @@
                     "CAPTION": "Transportwijze",
                     "OPENBAAR_VERVOER": "Openbaar vervoer",
                     "FIETS": "Fiets",
-                    "EIGEN_VERVOER": "Eigen vervoer"
+                    "EIGEN_WAGEN": "Eigen wagen"
                 },
-                "AANTAL_KILOMETER" : {
-                    "CAPTION": "Aantal kilometer"
+                "BEDRAG" : {
+                    "CAPTION": "Bedrag"
                 }
             },
             "NAVIGATION": {

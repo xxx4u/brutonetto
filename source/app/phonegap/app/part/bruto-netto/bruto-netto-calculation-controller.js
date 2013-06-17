@@ -27,7 +27,7 @@ Application.Controllers.controller('bruto.netto.calculation.controller', ['$scop
                 $scope.brutoNettoModel.Calculation = angular.extend({}, { Bruto: Number(result.Bruto).toFixed(2), Netto: Number(result.Netto).toFixed(2) });                
             }, function(error) {
                 self.disableProgressNotification(job, $scope);
-                console.log(error);
+                $scope.$state.transitionTo('brutonetto.error', $scope.$stateParams);
             }); 
     };
     

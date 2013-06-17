@@ -124,13 +124,23 @@ Application.Model.BrutoNetto.BrutoNettoModel = Application.Core.ObjectBase.exten
                     ]
                 }),
                 
+                new Application.Model.BrutoNetto.ToggleParameter({
+                    ID: 'MAANDLOONOFUURLOONTYPE',
+                    Caption: 'APPLICATION.PART.BRUTONETTO.MAAND_OF_UURLOON_TYPE.CAPTION',
+                    Value: 'UURLOON',
+                    Options: [
+                        { ID:'UURLOON', Caption: 'APPLICATION.PART.BRUTONETTO.MAAND_OF_UURLOON_TYPE.UURLOON' },
+                        { ID:'MAANDLOON', Caption: 'APPLICATION.PART.BRUTONETTO.MAAND_OF_UURLOON_TYPE.MAANDLOON' }
+                    ]
+                }),
+                
                 new Application.Model.BrutoNetto.DecimalParameter({
                     ID: 'MAANDLOONOFUURLOON',
                     Caption: 'APPLICATION.PART.BRUTONETTO.MAAND_OF_UURLOON.CAPTION',
                     Value: '0.00'
                 }),
                 
-                new Application.Model.BrutoNetto.DecimalParameter({
+                new Application.Model.BrutoNetto.FixedParameter({
                     ID: 'WERKDAGENPERWEEK',
                     Caption: 'APPLICATION.PART.BRUTONETTO.WERKDAGEN_PER_WEEK.CAPTION',
                     Value: '5'
@@ -199,40 +209,130 @@ Application.Model.BrutoNetto.BrutoNettoModel = Application.Core.ObjectBase.exten
                     ]
                 }),
                 
-                new Application.Model.BrutoNetto.IntegerParameter({
+                new Application.Model.BrutoNetto.SelectionParameter({
                     ID: 'VALIDEKINDEREN',
                     Caption: 'APPLICATION.PART.BRUTONETTO.VALIDE_KINDEREN.CAPTION',
-                    Value: '0'
+                    Value: '0',
+                    Options: [
+                        { ID:'0', Caption: '0' },
+                        { ID:'1', Caption: '1' },
+                        { ID:'2', Caption: '2' },
+                        { ID:'3', Caption: '3' },
+                        { ID:'4', Caption: '4' },
+                        { ID:'5', Caption: '5' },
+                        { ID:'6', Caption: '6' },
+                        { ID:'7', Caption: '7' },
+                        { ID:'8', Caption: '8' },
+                        { ID:'9', Caption: '9' },
+                        { ID:'10', Caption: '10' },
+                        { ID:'11', Caption: '11' },
+                        { ID:'12', Caption: '12' }
+                    ]
                 }),
                 
-                new Application.Model.BrutoNetto.IntegerParameter({
+                new Application.Model.BrutoNetto.SelectionParameter({
                     ID: 'MINDERVALIDEKINDEREN',
                     Caption: 'APPLICATION.PART.BRUTONETTO.MINDERVALIDE_KINDEREN.CAPTION',
-                    Value: '0'
+                    Value: '0',
+                    Options: [
+                        { ID:'0', Caption: '0' },
+                        { ID:'1', Caption: '1' },
+                        { ID:'2', Caption: '2' },
+                        { ID:'3', Caption: '3' },
+                        { ID:'4', Caption: '4' },
+                        { ID:'5', Caption: '5' },
+                        { ID:'6', Caption: '6' },
+                        { ID:'7', Caption: '7' },
+                        { ID:'8', Caption: '8' },
+                        { ID:'9', Caption: '9' },
+                        { ID:'10', Caption: '10' },
+                        { ID:'11', Caption: '11' },
+                        { ID:'12', Caption: '12' }
+                    ]
                 }),
                 
-                new Application.Model.BrutoNetto.IntegerParameter({
+                new Application.Model.BrutoNetto.SelectionParameter({
                     ID: 'VALIDEANDEREN65JAAROFJONGER',
                     Caption: 'APPLICATION.PART.BRUTONETTO.VALIDE_ANDEREN_65_JAAR_OF_JONGER.CAPTION',
-                    Value: '0'
+                    Value: '0',
+                    Options: [
+                        { ID:'0', Caption: '0' },
+                        { ID:'1', Caption: '1' },
+                        { ID:'2', Caption: '2' },
+                        { ID:'3', Caption: '3' },
+                        { ID:'4', Caption: '4' },
+                        { ID:'5', Caption: '5' },
+                        { ID:'6', Caption: '6' },
+                        { ID:'7', Caption: '7' },
+                        { ID:'8', Caption: '8' },
+                        { ID:'9', Caption: '9' },
+                        { ID:'10', Caption: '10' },
+                        { ID:'11', Caption: '11' },
+                        { ID:'12', Caption: '12' }
+                    ]
                 }),
-                                
-                new Application.Model.BrutoNetto.IntegerParameter({
+                
+                new Application.Model.BrutoNetto.SelectionParameter({
                     ID: 'MINDERVALIDEANDEREN65JAAROFJONGER',
                     Caption: 'APPLICATION.PART.BRUTONETTO.MINDERVALIDE_ANDEREN_65_JAAR_OF_JONGER.CAPTION',
-                    Value: '0'
+                    Value: '0',
+                    Options: [
+                        { ID:'0', Caption: '0' },
+                        { ID:'1', Caption: '1' },
+                        { ID:'2', Caption: '2' },
+                        { ID:'3', Caption: '3' },
+                        { ID:'4', Caption: '4' },
+                        { ID:'5', Caption: '5' },
+                        { ID:'6', Caption: '6' },
+                        { ID:'7', Caption: '7' },
+                        { ID:'8', Caption: '8' },
+                        { ID:'9', Caption: '9' },
+                        { ID:'10', Caption: '10' },
+                        { ID:'11', Caption: '11' },
+                        { ID:'12', Caption: '12' }
+                    ]
                 }),
-                                
-                new Application.Model.BrutoNetto.IntegerParameter({
+                
+                new Application.Model.BrutoNetto.SelectionParameter({
                     ID: 'VALIDEANDERENOUDERDAN65JAAR',
                     Caption: 'APPLICATION.PART.BRUTONETTO.VALIDE_ANDEREN_OUDER_DAN_65_JAAR.CAPTION',
-                    Value: '0'
+                    Value: '0',
+                    Options: [
+                        { ID:'0', Caption: '0' },
+                        { ID:'1', Caption: '1' },
+                        { ID:'2', Caption: '2' },
+                        { ID:'3', Caption: '3' },
+                        { ID:'4', Caption: '4' },
+                        { ID:'5', Caption: '5' },
+                        { ID:'6', Caption: '6' },
+                        { ID:'7', Caption: '7' },
+                        { ID:'8', Caption: '8' },
+                        { ID:'9', Caption: '9' },
+                        { ID:'10', Caption: '10' },
+                        { ID:'11', Caption: '11' },
+                        { ID:'12', Caption: '12' }
+                    ]
                 }),
-                                
-                new Application.Model.BrutoNetto.IntegerParameter({
+                
+                new Application.Model.BrutoNetto.SelectionParameter({
                     ID: 'MINDERVALIDEANDERENOUDERDAN65JAAR',
                     Caption: 'APPLICATION.PART.BRUTONETTO.MINDERVALIDE_ANDEREN_OUDER_DAN_65_JAAR.CAPTION',
-                    Value: '0'
+                    Value: '0',
+                    Options: [
+                        { ID:'0', Caption: '0' },
+                        { ID:'1', Caption: '1' },
+                        { ID:'2', Caption: '2' },
+                        { ID:'3', Caption: '3' },
+                        { ID:'4', Caption: '4' },
+                        { ID:'5', Caption: '5' },
+                        { ID:'6', Caption: '6' },
+                        { ID:'7', Caption: '7' },
+                        { ID:'8', Caption: '8' },
+                        { ID:'9', Caption: '9' },
+                        { ID:'10', Caption: '10' },
+                        { ID:'11', Caption: '11' },
+                        { ID:'12', Caption: '12' }
+                    ]
                 })
             ]
         }),
@@ -270,13 +370,13 @@ Application.Model.BrutoNetto.BrutoNettoModel = Application.Core.ObjectBase.exten
                     Options: [
                         { ID:'OPENBAARVERVOER', Caption: 'APPLICATION.PART.BRUTONETTO.TRANSPORTWIJZE.OPENBAAR_VERVOER' },
                         { ID:'FIETS', Caption: 'APPLICATION.PART.BRUTONETTO.TRANSPORTWIJZE.FIETS' },
-                        { ID:'EIGENVERVOER', Caption: 'APPLICATION.PART.BRUTONETTO.TRANSPORTWIJZE.EIGEN_VERVOER' }
+                        { ID:'EIGENWAGEN', Caption: 'APPLICATION.PART.BRUTONETTO.TRANSPORTWIJZE.EIGEN_WAGEN' }
                     ]
                 }),
                 
                 new Application.Model.BrutoNetto.DecimalParameter({
-                    ID: 'AANTALKILOMETER',
-                    Caption: 'APPLICATION.PART.BRUTONETTO.AANTAL_KILOMETER.CAPTION',
+                    ID: 'BEDRAG',
+                    Caption: 'APPLICATION.PART.BRUTONETTO.BEDRAG.CAPTION',
                     Value: '0.00'
                 })
             ]

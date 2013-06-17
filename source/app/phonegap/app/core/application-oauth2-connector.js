@@ -46,7 +46,7 @@ Application.Services.factory('$oauth2ConnectorFactory', ['$rootScope', '$configu
             }); 
             
             $scope.$on('event:oauth-connector:request-retry-success', function(event, data) {
-                $scope.$logger.log({ level: $constant.LOG_LEVEL_DEBUG, message: 'event:oauth-connector:request-retry-success', data: data });
+                $scope.$logger.log({ level: $constant.LOG_LEVEL_INFO, message: 'event:oauth-connector:request-retry-success', data: data });
             }); 
             
             $scope.$on('event:oauth-connector:request-retry-error', function(event, error) {
