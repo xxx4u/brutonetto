@@ -16,7 +16,7 @@ Application.Services.factory('$oauth2ConnectorFactory', ['$rootScope', '$configu
             // Create a queue to hold the request invoked with an access token which turned out to be expired.
             self.requestRetryQueue = [];
             
-            // Register all interesting events fro logging.
+            // Register all interesting events for logging.
             $scope.$on('event:authorization:access-token-expired', function() {
                 $scope.$logger.log({ level: $constant.LOG_LEVEL_ERROR, message: 'event:authorization:access-token-expired'});
             });
@@ -295,7 +295,8 @@ Application.Services.factory('$oauth2ConnectorFactory', ['$rootScope', '$configu
                         var request = { settings: settings, deferred: deferred, config: config };
                         $scope.$emit('event:authorization:access-token-expired', request);
                         
-                        // So ... the 
+                        // Handle the failed request, 
+                        // in this case of 401 the request will be retried after refreshing the token.
                         self.handleUnauthorizedRequest(request);
                     }
                     else {
@@ -333,6 +334,8 @@ Application.Services.factory('$oauth2ConnectorFactory', ['$rootScope', '$configu
                         var request = { settings: settings, deferred: deferred, config: config };
                         $scope.$emit('event:authorization:access-token-expired', request);
                         
+                        // Handle the failed request, 
+                        // in this case of 401 the request will be retried after refreshing the token.                        
                         self.handleUnauthorizedRequest(request);
                     }
                     else {
