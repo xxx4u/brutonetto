@@ -1,0 +1,211 @@
+{
+    "APPLICATION" : {
+        "0": "0",
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5",
+        "6": "6",
+        "7": "7",
+        "8": "8",
+        "9": "9",
+        "10": "10",
+        "11": "11",
+        "12": "12",
+        
+        "INFO_LABEL": "Info",
+        "WARNING_LABEL": "Waarschuwing",
+        "ERROR_LABEL": "Fout",
+        
+        "YES": "Ja",
+        "NO": "Nee",
+        
+        "PREVIOUS": "Vorige",
+        "NEXT": "Volgende",        
+        
+        "CLOSE": "Sluiten",
+        
+        "CONTROLLER": {
+            "LANGUAGE_MENU_ITEM": "Taal"
+        },
+        "PART" : {
+            "BRUTONETTO": {
+                "CAPTION": "Bruto-netto", 
+                "CALCULATION_ERROR_MESSAGE" : "Ai ai ... er is iets verkeerd gelopen",
+                "USE_EXTENDED_PARAMETERS": "Gebruik de uitgebreide parameters",
+                "BEREKEND_BRUTOLOON": { 
+                    "CAPTION":"Bruto"
+                },        
+                "BEREKEND_NETTOLOON": { 
+                    "CAPTION":"Netto"
+                },
+                "NIEUWE_BEREKENING": {
+                    "CAPTION": "Nieuwe berekening"
+                },
+                "ALGEMENE_INFORMATIE": { 
+                    "CAPTION":"Algemene gegevens"
+                },
+                "GEZINSINFORMATIE": { 
+                    "CAPTION":"Gezinsinformatie"
+                },
+                "VERGOEDING_INHOUDING": { 
+                    "CAPTION":"Vergoedingen en inhoudingen"
+                },
+                "TRANSPORTVERGOEDING": { 
+                    "CAPTION":"Transportvergoeding"
+                },
+                "BEREKENINGSWIJZE": { 
+                    "CAPTION": "Berekeningswijze",
+                    "NETTO_NAAR_BRUTO": "Netto - bruto",
+                    "BRUTO_NAAR_NETTO": "Bruto - netto"
+                },
+                "STATUUT": { 
+                    "CAPTION": "Statuut",
+                    "ARBEIDER": "Arbeider",
+                    "BEDIENDE": "Bediende"
+                },
+                "BURGERLIJKE_STAAT": {
+                    "CAPTION": "Burgelijke staat",
+                    "SAMENWONEND_FEITELIJK": "Feitelijk samenwonend",
+                    "SAMENWONEND_OVERLEDEN": "Overleden",
+                    "SAMENWONEND_WETTELIJK_EINDE": "Wettelijk samenwonend",
+                    "SAMENWONEND_FEITELIJK_EINDE": "Feitelijk samenwonend",
+                    "ONGEHUWD": "Ongehuwd",
+                    "GEHUWD": "Gehuwd",
+                    "WEDUWNAAR": "Weduwnaar/Weduwe",
+                    "GESCHEIDEN_WETTELIJK": "Wettelijk gescheiden",
+                    "GESCHEIDEN_FEITELIJK": "Feitelijk gescheiden"
+                },
+                "MAAND_OF_UURLOON_TYPE": { 
+                    "CAPTION": "Maand- of uurloon",
+                    "UURLOON": "Uurloon",
+                    "MAANDLOON": "Maandloon"
+                },
+                "MAAND_OF_UURLOON": { 
+                    "CAPTION": "Loon"
+                },
+                "UREN_PER_WEEK": {
+                    "CAPTION": "Uren per week"
+                },
+                "WERKDAGEN_PER_WEEK": {
+                    "CAPTION": "Werkdagen per week"
+                },
+                "BEROEPS_INKOMEN_PARTNER" : {
+                    "CAPTION": "Beroepsinkomen partner",
+                    "GEEN_BEROEPSINKOMEN": "Geen broepsinkomen",
+                    "BEROEPSINKOMEN_BOVEN_LAGE_GRENS": "Beroepsinkomen boven lage grens",
+                    "NIET_PENSIOENINKOMEN_BOVEN_LAGE_GRENS": "Niet pensioeninkomen boven lage grens",
+                    "ENKEL_PENSIOEN_ONDER_LAGE_GRENS": "Enkel pensioen onder lage grens",
+                    "ENKEL_PENSIOEN_ONDER_ZEER_LAGE_GRENS": "Enkel pensioen onder zeer lage grens"
+                },
+                "VALIDE_KINDEREN" : {
+                    "CAPTION": "Valide kinderen"
+                },
+                "MINDERVALIDE_KINDEREN" : {
+                    "CAPTION": "Mindervalide kinderen"
+                },
+                "VALIDE_ANDEREN_65_JAAR_OF_JONGER" : {
+                    "CAPTION": "Ander validen 65 jaar of ouder"
+                },
+                "MINDERVALIDE_ANDEREN_65_JAAR_OF_JONGER" : {
+                    "CAPTION": "Ander mindervaliden 65 jaar of ouder"
+                },
+                "VALIDE_ANDEREN_OUDER_DAN_65_JAAR" : {
+                    "CAPTION": "Ander validen ourder dan 65 jaar"
+                },
+                "MINDERVALIDE_ANDEREN_OUDER_DAN_65_JAAR" : {
+                    "CAPTION": "Ander mindervaliden ouder dan 65 jaar"
+                },
+                "GEWEST": { 
+                    "CAPTION": "Gewest",
+                    "VLAAMS": "Vlaams",
+                    "WAALS": "Waals"
+                },
+                "IS_MINDERVALIDE": { 
+                    "CAPTION": "Ben je mindervalide",
+                    "TRUE": "Ja",
+                    "FALSE": "Nee"
+                },
+                "IS_PARTNER_MINDERVALIDE": { 
+                    "CAPTION": "Is je partner mindervalide",
+                    "TRUE": "Ja",
+                    "FALSE": "Nee"
+                },
+                "KOSTEN_EIGEN_AANWERKGEVER" : {
+                    "CAPTION": "Kosten eigen aan de werkgever"
+                },
+                "ANDERE_NETTO_INHOUDINGEN" : {
+                    "CAPTION": "Andere netto inhoudingen"
+                },
+                "TRANSPORTWIJZE" : {
+                    "CAPTION": "Transportwijze",
+                    "OPENBAAR_VERVOER": "Openbaar vervoer",
+                    "FIETS": "Fiets",
+                    "EIGEN_WAGEN": "Eigen wagen"
+                },
+                "BEDRAG" : {
+                    "CAPTION": "Bedrag"
+                }
+            },
+            "NAVIGATION": {
+                "SIGN_IN_MENU_ITEM": "Aanmelden",
+                "SIGN_OUT_MENU_ITEM": "Afmelden",
+                "BRUTONETTO_MENU_ITEM": "Bruto-Netto",
+                "DASHBOARD_MENU_ITEM": "Dashboard",
+                "DETAILS_MENU_ITEM": "Details",
+                "PROFILE_MENU_ITEM": "Profiel",
+                "DEBUG_MENU_ITEM": "Debug"
+            },
+            "AUTHORIZATION": {
+                "SIGN_IN": {
+                    "CAPTION": "Aanmelden",
+                    "USER_IDENTIFIER": "E-Mail adres",
+                    "USER_IDENTIFIER_PLACEHOLDER": "e-mail adres",
+                    "PASSWORD": "Paswoord",
+                    "PASSWORD_PLACEHOLDER": "paswoord",
+                    "SIGN_IN_COMMAND": "Aanmelden",
+                    "NEW_USER": "Nieuwe gebruiker van Angular Origin ?",
+                    "GOTO_SIGN_UP_COMMAND": "Registreren"
+                },
+                "SIGN_UP": {
+                    "CAPTION": "Registreren",
+                    "IDENTITY_NAME": "Naam",
+                    "IDENTITY_NAME_PLACEHOLDER": "naam",
+                    "IDENTITY_FIRST_NAME": "Voornaam",
+                    "IDENTITY_FIRST_NAME_PLACEHOLDER": "voornaam",
+                    "USER_IDENTIFIER": "E-Mail adres",
+                    "USER_IDENTIFIER_PLACEHOLDER": "e-mail adres",
+                    "PASSWORD": "Paswoord",
+                    "PASSWORD_PLACEHOLDER": "paswoord",
+                    "SIGN_UP_COMMAND": "Registreren",
+                    "ALLREADY_REGISTERED": "Bent u reeds geregistreerd ?",
+                    "GOTO_SIGN_IN_COMMAND": "Aanmelden"
+                },
+                "SIGN_OUT": {
+                    "CAPTION": "Afmelden"
+                }
+            },
+            "PROFILE" : {
+                "CAPTION": "Profiel",
+                "IDENTITY_NAME": "Naam",
+                "IDENTITY_NAME_PLACEHOLDER": "naam",
+                "IDENTITY_FIRST_NAME": "Voornaam",
+                "IDENTITY_FIRST_NAME_PLACEHOLDER": "voornaam",
+                "USER_IDENTIFIER": "E-Mail adres",
+                "USER_IDENTIFIER_PLACEHOLDER": "e-mail adres",
+                "PASSWORD": "Paswoord",
+                "PASSWORD_PLACEHOLDER": "paswoord",
+                "SAVE_COMMAND": "Bewaren"
+            },
+            "DEBUG" : {
+                "CAPTION": "Debug",
+                "LOG_EVENT": "Log event",
+                "TIMESTAMP": "Tijdstip",
+                "LEVEL": "Niveau",
+                "MESSAGE": "Boodschap",
+                "DATA": "Data"
+            }
+        }
+    }
+}

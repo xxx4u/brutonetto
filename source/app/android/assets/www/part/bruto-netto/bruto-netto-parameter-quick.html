@@ -1,0 +1,26 @@
+<div ng-controller='bruto.netto.parameter.quick.controller'>
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+            
+            <!-- FIRST PAGE COLUMN -->
+            <div class="span1"></div>
+            <div class="span6">               
+                <form class="form-horizontal">
+                    <div>
+                        <a href="#" ng-click="goToExtendedParameters()" onclick="javascript: return false;" translate>APPLICATION.PART.BRUTONETTO.USE_EXTENDED_PARAMETERS</a>
+                    </div>
+                    <div class="form-actions hidden-phone">
+                        <button class="btn btn-primary pull-left" ng-click="goToCalculate()">Bereken</button>
+                    </div>
+                    <button class="btn btn-primary btn-block hidden-desktop hidden-tablet" ng-click="goToCalculate()">Bereken</button>
+                </form>
+                <div  style="padding-bottom: 16px;">&nbsp;</div>
+            </div>
+            
+            <!-- SECOND PAGE COLUMN -->
+            <div class="span4">&nbsp;</div>
+            <div class="span1"></div>
+        </div>
+    </div>
+</div>

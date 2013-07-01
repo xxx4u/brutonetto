@@ -1,0 +1,41 @@
+﻿.app-side-panel-container {
+	z-index: 199;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: table;
+	opacity: 0.9;
+}
+
+.app-side-panel-body {
+    display: table-cell;
+	background-color: #E0E0E0;
+}
+
+.app-side-panel-border {
+    display: table-cell;
+	background-color: transparent;
+	vertical-align: middle;
+}
+
+.app-side-panel-border .handle {
+	cursor: pointer;
+    background-color: @linkColor;
+	padding: 72px 8px;
+}
+
+.app-side-panel-container.left {
+    float: left;
+}
+
+.app-side-panel-container.left .app-side-panel-body {
+    border-right: 1px solid #818181;
+}
+
+.app-side-panel-container.left .app-side-panel-border .handle {
+	color: #FFFFFF;
+	border-top: 1px solid #616161;
+    border-right: 1px solid #616161;
+	border-bottom: 1px solid #616161;
+
+}

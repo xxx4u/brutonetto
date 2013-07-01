@@ -1,0 +1,60 @@
+<div ng-controller='authorization.signup.controller'>
+    <div style="background-color: rgba(208, 208, 208, 0.5); border-bottom: 1px solid rgba(170, 170, 170, 0.5);">
+        <h2 class="part-header" style="text-transform:lowercase;">
+            <span class="pull-right" style="white-space: nowrap;" translate>APPLICATION.PART.AUTHORIZATION.SIGN_UP.CAPTION</span>&nbsp;
+        </h2>
+    </div>
+    
+    <div class="app-ui-view container-fluid">
+        <div class="row-fluid">
+            <div class="span6">
+                &nbsp;
+            </div>
+            <div class="span6">
+                <div style="margin: 8px 8px;">
+                    <form name="signUpForm">
+                        <fieldset>                        
+                            <div class="alert-area">
+                                <div class="alert" ng-class="{error: 'alert-error'}[alert.type]" ng-repeat="alert in alerts" >
+                                    <button type="button" class="close" ng-click="dismissAlert($index)">&times;</button>
+                                    <strong>{{ alert.title }}</strong>&nbsp;&nbsp;{{ alert.message }}
+                                </div>
+                            </div>
+                            
+                            <input name="name" type="text" placeholder="{{'APPLICATION.PART.AUTHORIZATION.SIGN_UP.IDENTITY_FIRST_NAME_PLACEHOLDER' | translate}}" autocomplete="off" class="input-xlarge" ng-model="newUser.Identity.FirstName" required />
+                            
+                            <br />
+                            <input name="name" type="text" placeholder="{{'APPLICATION.PART.AUTHORIZATION.SIGN_UP.IDENTITY_NAME_PLACEHOLDER' | translate}}" autocomplete="off" class="input-xlarge" ng-model="newUser.Identity.Name" required />
+                            
+                            <br />
+                            <div class="btn-group" data-toggle="buttons-radio">
+                                <button type="button" class="btn btn-primary" tabindex="-1" ng-class="{true: 'active', false: ''}[item.isSelected]" ng-repeat="item in supportedLocales" app-repeat-done="supportedLocalesRendered()" ng-click="item.select()">{{ item.description }}</button>
+                            </div>
+                            
+                            <hr />
+                            <input name="username" type="text" placeholder="{{'APPLICATION.PART.AUTHORIZATION.SIGN_UP.USER_IDENTIFIER_PLACEHOLDER' | translate}}" autocomplete="off" class="input-xlarge" ng-model="newUser.User.Identifier" required />
+                            
+                            <br />
+                            <input type="password" placeholder="{{'APPLICATION.PART.AUTHORIZATION.SIGN_UP.PASSWORD_PLACEHOLDER' | translate}}" class="input-xlarge" ng-model="newUser.User.Password" required />
+                            
+                            <div class="form-actions">
+                                <div class="control-group">
+                                    <div class="controls">
+                                        <button class="btn btn-primary" ng-click="doSignUp()" ng-disabled="!signUpForm.$valid || (signUpForm.$valid && isBusy)" translate>APPLICATION.PART.AUTHORIZATION.SIGN_UP.SIGN_UP_COMMAND</button>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <div class="controls">
+                                        <span><span translate>APPLICATION.PART.AUTHORIZATION.SIGN_UP.ALLREADY_REGISTERED</span>&nbsp;<button class="btn btn-mini" type="button" ng-click="goToSignIn()" translate>APPLICATION.PART.AUTHORIZATION.SIGN_UP.GOTO_SIGN_IN_COMMAND</button></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

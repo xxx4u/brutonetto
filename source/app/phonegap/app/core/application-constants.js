@@ -4,14 +4,16 @@ Application.Constants.constant('$constant', {
     
     DEFAULT_LOCALE: 'en_US',
     
-    DATA_SERVICE_ENDPOINT : 'http://localhost:53898/api/1.0/data/',
+    DATA_SERVICE_ENDPOINT_ORIG : 'http://localhost:53898/api/1.0/data/',
+    DATA_SERVICE_ENDPOINT : 'http://localhost/brutonettoservice/api/1.0/data/',
     
     LOCAL_STORAGE: 'LOCAL',
     SESSION_STORAGE: 'SESSION',
     
     APPLICATION_SECURITY_CONTEXT: 'APPLICATION',
     
-    OAUTH_APPLICATION_AUTHENTICATION_SERVER_ENDPOINT : 'http://localhost:53898/oauth2/authorization/',
+    OAUTH_APPLICATION_AUTHENTICATION_SERVER_ENDPOINT_ORIG : 'http://localhost:53898/oauth2/authorization/',
+    OAUTH_APPLICATION_AUTHENTICATION_SERVER_ENDPOINT : 'http://localhost/brutonettoservice/oauth2/authorization/',
     OAUTH_APPLICATION_CLIENT_CREDENTIALS: { clientIdentifier: 'DEMO-APPLICATION', clientSecret: 'DEMO-APPLICATION-SECRET'},
     OAUTH_APPLICATION_CLIENT_SCOPE: 'demo-client-scope',
     

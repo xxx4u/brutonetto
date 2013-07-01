@@ -1,0 +1,32 @@
+.btn-switch {
+    width: 6em;
+    height: 29px;
+    line-height: 29px;
+    padding: 0;
+}
+
+.btn-switch-on, .btn-switch-off {
+    color: #ffffff;
+    text-align: center;
+    width: 3em;
+}
+    
+.btn-switch-on {
+    background-color: @btnPrimaryBackground;
+    float: right;
+}
+
+/* TODO: Change colof of off to match contrast with on or not! */
+.btn-switch-off {
+    background-color: @btnDangerBackground;
+    float: left;
+}
+  
+.btn-switch, .btn-switch-on, .btn-switch-off {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

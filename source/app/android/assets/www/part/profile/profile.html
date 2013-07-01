@@ -1,0 +1,46 @@
+<div ng-controller='profile.controller' style="width: 100%">
+    <div style="background-color: rgba(208, 208, 208, 0.5); border-bottom: 1px solid rgba(170, 170, 170, 0.5);">
+        <h2 class="part-header" style="text-transform:lowercase;">
+            <span class="pull-right" translate>APPLICATION.PART.PROFILE.CAPTION</span>&nbsp;
+        </h2>
+    </div>
+    
+    <div class="app-ui-view container-fluid">
+        <div class="row-fluid">
+            <div class="span6 offset6">
+                <div style="margin: 8px 8px;">
+                    <form name="signUpForm">
+                        <fieldset>                        
+                            <div class="alert-area">
+                                <div class="alert" ng-class="{error: 'alert-error'}[alert.type]" ng-repeat="alert in alerts" >
+                                    <button type="button" class="close" ng-click="dismissAlert($index)">&times;</button>
+                                    <strong>{{ alert.title }}</strong>&nbsp;&nbsp;{{ alert.message }}
+                                </div>
+                            </div>
+                            
+                            <input name="name" type="text" placeholder="{{'APPLICATION.PART.PROFILE.IDENTITY_FIRST_NAME_PLACEHOLDER' | translate}}" autocomplete="off" class="input-xlarge" ng-model="newUser.Identity.FirstName" required />
+                            
+                            <br />
+                            <input name="name" type="text" placeholder="{{'APPLICATION.PART.PROFILE.IDENTITY_NAME_PLACEHOLDER' | translate}}" autocomplete="off" class="input-xlarge" ng-model="newUser.Identity.Name" required />
+                            
+                            <hr />
+                            <input name="username" type="text" placeholder="{{'APPLICATION.PART.PROFILE.USER_IDENTIFIER_PLACEHOLDER' | translate}}" autocomplete="off" class="input-xlarge" ng-model="newUser.User.Identifier" required />
+                            
+                            <br />
+                            <input type="password" placeholder="{{'APPLICATION.PART.PROFILE.PASSWORD_PLACEHOLDER' | translate}}" class="input-xlarge" ng-model="newUser.User.Password" required />
+                            
+                            <div class="form-actions">
+                                <div class="control-group">
+                                    <div class="controls">
+                                        <button class="btn btn-primary" ng-click="doSignUp()" ng-disabled="!signUpForm.$valid || (signUpForm.$valid && isBusy)" translate>APPLICATION.PART.PROFILE.SAVE_COMMAND</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div ng-controller='bruto.netto.calculation.controller'>
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+            
+            <div ui-if="progress > 0 && progress < 100" class="row-fluid" style="margin: 16px 0;">
+                <div class="span4 offset4">
+                    <div class="progress">
+                        <div class="bar bar-warning" ng-style="progressBarStyle"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FIRST PAGE COLUMN -->
+            <div class="span1"></div>
+            
+            <!-- SECOND PAGE COLUMN -->
+            <div class="span6">
+                <div style="display: table; width: 100%; padding: 16px 0;">
+                    <div ui-if="brutoNettoModel.Calculation.Bruto" style="display: table-row; height: 50px;">
+                        <div style="display: table-cell; font-weight: bold; font-size: 2em;" translate>APPLICATION.PART.BRUTONETTO.BEREKEND_BRUTOLOON.CAPTION</div>
+                        <div style="display: table-cell; font-weight: bold; font-size: 2em; text-align: right;">{{ brutoNettoModel.Calculation.Bruto }}</div>
+                    </div>
+                    <div ui-if="brutoNettoModel.Calculation.Netto"  style="display: table-row; height: 50px;">
+                        <div style="display: table-cell; font-weight: bold; font-size: 2em;" translate>APPLICATION.PART.BRUTONETTO.BEREKEND_NETTOLOON.CAPTION</div>
+                        <div style="display: table-cell; font-weight: bold; font-size: 2em; text-align: right;">{{ brutoNettoModel.Calculation.Netto }}</div>
+                    </div>
+                </div>              
+            </div>
+            
+            <div class="span4"></div>
+            <div class="span1"></div>
+        </div>
+        
+        <div class="row-fluid">
+            <div class="span12">
+                <button class="btn btn-primary btn-block" ng-click="goToParameters()" ui-if="brutoNettoModel.Calculation.Bruto && brutoNettoModel.Calculation.Netto" translate>APPLICATION.PART.BRUTONETTO.NIEUWE_BEREKENING.CAPTION</button>
+            </div>
+        </div>
+    </div>
+    
+</div>
