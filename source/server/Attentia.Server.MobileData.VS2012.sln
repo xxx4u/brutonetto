@@ -58,6 +58,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D14516
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "60.Client", "60.Client", "{8DB5B1BE-532D-448D-8C9A-4D09992410B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Attentia.BrutoNetto.Client.Cordova", "..\app\Attentia.BrutoNetto.Client.Cordova\Attentia.BrutoNetto.Client.Cordova.csproj", "{C61008C5-9A55-4658-891E-2646D829D2D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -144,6 +148,10 @@ Global
 		{32976601-5E1D-45F8-B04C-B9102621E466}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32976601-5E1D-45F8-B04C-B9102621E466}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32976601-5E1D-45F8-B04C-B9102621E466}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C61008C5-9A55-4658-891E-2646D829D2D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C61008C5-9A55-4658-891E-2646D829D2D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C61008C5-9A55-4658-891E-2646D829D2D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C61008C5-9A55-4658-891E-2646D829D2D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -169,5 +177,6 @@ Global
 		{2A1E2490-2186-4E05-ACF6-BD670544418F} = {4DA809C0-1DC7-4777-992C-0C72DEE201E8}
 		{9879DA61-FF7E-435E-B5F2-EC620ADFA361} = {4DA809C0-1DC7-4777-992C-0C72DEE201E8}
 		{46CF003C-5B02-4432-A648-0CE80D88AAB4} = {4DA809C0-1DC7-4777-992C-0C72DEE201E8}
+		{C61008C5-9A55-4658-891E-2646D829D2D3} = {8DB5B1BE-532D-448D-8C9A-4D09992410B0}
 	EndGlobalSection
 EndGlobal
