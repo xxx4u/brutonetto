@@ -19,7 +19,7 @@ Application.Model.BrutoNetto.ParameterGroup = Application.Core.ObjectBase.extend
             .ForEach (function(x) {
                 result[x.ID] = x.toDataTransferObject();
             });
-        
+
         return result;
     },
 });
@@ -96,8 +96,6 @@ Application.Model.BrutoNetto.BrutoNettoModel = Application.Core.ObjectBase.exten
                     }
                 }
             });
-        
-        console.log(result);
         
         return result;
     }

@@ -2181,6 +2181,9 @@
     <Content Include="app\part\bruto-netto\bruto-netto-error-controller.js" />
     <Content Include="app\part\bruto-netto\bruto-netto-error.html" />
     <Content Include="app\part\bruto-netto\bruto-netto-model.js" />
+    <Content Include="app\part\bruto-netto\bruto-netto-model.min.js">
+      <DependentUpon>bruto-netto-model.js</DependentUpon>
+    </Content>
     <Content Include="app\part\bruto-netto\bruto-netto-parameter-extended-controller.js" />
     <Content Include="app\part\bruto-netto\bruto-netto-parameter-extended.html" />
     <Content Include="app\part\bruto-netto\bruto-netto-parameter-quick-controller.js" />
@@ -2201,6 +2204,12 @@
     <Content Include="app\service\app-resource-service.js" />
     <Content Include="app\style\angular-ui\angular-ui.css" />
     <Content Include="app\style\angular-ui\angular-ui.min.css" />
+    <Content Include="app\style\application\application.css">
+      <DependentUpon>application.less</DependentUpon>
+    </Content>
+    <Content Include="app\style\application\application.min.css">
+      <DependentUpon>application.less</DependentUpon>
+    </Content>
     <Content Include="app\style\jquery-plugin\jquery.scrollIndicator.css" />
     <Content Include="app\style\jquery-plugin\jquery.slidePage.css" />
     <Content Include="app\style\jquery-ui\theme\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -2372,6 +2381,9 @@
     <Content Include="scripts\test.bat" />
     <Content Include="scripts\test.sh" />
     <Content Include="scripts\web-server.bat" />
+    <Content Include="app\part\bruto-netto\bruto-netto-model.min.js.map">
+      <DependentUpon>bruto-netto-model.js</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
