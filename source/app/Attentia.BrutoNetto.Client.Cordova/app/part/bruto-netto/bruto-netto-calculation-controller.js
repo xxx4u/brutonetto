@@ -1,6 +1,6 @@
 'use strict';
 
-Application.Controllers.controller('bruto.netto.calculation.controller', ['$scope', '$constant', '$translate', '$dataService', '$interval', function($scope, $constant, $translate, $dataService, $interval){
+Application.Controllers.controller('bruto.netto.calculation.controller', ['$scope', '$constant', '$translate', '$dataService', '$interval', '$document', function($scope, $constant, $translate, $dataService, $interval, $document){
     var self = this;
     
     $scope.$on('$stateChangeSuccess', function (event, data) {
@@ -39,11 +39,13 @@ Application.Controllers.controller('bruto.netto.calculation.controller', ['$scop
     self.enableProgressNotification = function($scope) {
         $scope.progress = 0;
         var job = $interval(function() {
-            $scope.progress =  $scope.progress + 1;
+            $scope.progress = $scope.progress + 1;
         }, 300, 100, true).stop();
         
         setTimeout(function() {
-            if (!$scope.brutoNettoModel.Calculation.Bruto && ! $scope.brutoNettoModel.Calculation.Netto) { job.start() };
+            if (!$scope.brutoNettoModel.Calculation.Bruto && !$scope.brutoNettoModel.Calculation.Netto) {
+                job.start();
+            };
         }, 500);
         
         return job;

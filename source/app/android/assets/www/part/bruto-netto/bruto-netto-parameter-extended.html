@@ -27,17 +27,17 @@
                                     
                                     <!-- FIXED PARAMETER -->
                                     <div ng-switch-when="FIXED_PARAMETER">
-                                        <input class="input-xlarge" ng-show="parameter.IsVisible" ng-model="parameter.Value" style="text-align: right;" />
+                                        <input class="input-xlarge" type="text" ng-show="parameter.IsVisible" ng-model="parameter.Value" style="text-align: right;" />
                                     </div>
                                     
                                     <!-- INTEGER PARAMETER -->
                                     <div ng-switch-when="INTEGER_PARAMETER">
-                                        <input class="input-xlarge" ng-model="parameter.Value" app-select-on-click style="text-align: right;" />
+                                        <input class="input-xlarge" type="text" ng-model="parameter.Value" app-select-on-click style="text-align: right;" />
                                     </div>
                                     
                                     <!-- DECIMAL PARAMETER -->
                                     <div ng-switch-when="DECIMAL_PARAMETER">
-                                        <input class="input-xlarge" placeholder="0,00" ng-model="parameter.Value" ui-event="{ keypress : 'keypressed($event, parameter)' } " app-select-on-click style="text-align: right;" />
+                                        <input class="input-xlarge" type="text" placeholder="0,00" ng-model="parameter.Value" ui-event="{ keypress : 'keypressed($event, parameter)' } " app-select-on-click style="text-align: right;" />
                                     </div>
                                     
                                     <!-- TOGGLE PARAMETER -->

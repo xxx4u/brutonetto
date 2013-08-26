@@ -20,6 +20,7 @@
         angular.element(document).ready(function () {
             angular.bootstrap(document);
         });
-        //new FastClick(document.body);
+
+        new FastClick(document.body);
     }
 };

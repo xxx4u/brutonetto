@@ -2,7 +2,7 @@
 
 Application.Services.factory('$oauth2ConnectorFactory', ['$rootScope', '$configuration', '$constant', '$logger', '$http', '$q', '$base64', function($scope, $configuration, $constant, $logger, $http, $q, $base64 ) {
 
-    function OAuthConnectorFactory() {
+    function OAuth2ConnectorFactory() {
         var self = this;
         
         /** 
@@ -10,7 +10,7 @@ Application.Services.factory('$oauth2ConnectorFactory', ['$rootScope', '$configu
          *  The connector allows to exchange and refresh client and user access token. 
          *  It wraps HTTP request and uses an retry mechanism in case an access token is expired and needs to be refreshed.
          */
-        function  OAuthConnector() {
+        function  OAuth2Connector() {
             var self = this;
             
             // Create a queue to hold the request invoked with an access token which turned out to be expired.
@@ -54,7 +54,7 @@ Application.Services.factory('$oauth2ConnectorFactory', ['$rootScope', '$configu
             });                 
         }
     
-        OAuthConnector.prototype.getClientAccessToken = function (parameters) {
+        OAuth2Connector.prototype.getClientAccessToken = function (parameters) {
             var self = this;
             
             var deferred = $q.defer();
@@ -91,7 +91,7 @@ Application.Services.factory('$oauth2ConnectorFactory', ['$rootScope', '$configu
             return deferred.promise;                        
         };
         
-        OAuthConnector.prototype.exchangeUserCredentialForAccessToken = function (parameters) {
+        OAuth2Connector.prototype.exchangeUserCredentialForAccessToken = function (parameters) {
             var self = this;
             
             var deferred = $q.defer();
@@ -130,7 +130,7 @@ Application.Services.factory('$oauth2ConnectorFactory', ['$rootScope', '$configu
             return deferred.promise;                        
         };
         
-        OAuthConnector.prototype.refreshUserAccessToken = function (parameters) {
+        OAuth2Connector.prototype.refreshUserAccessToken = function (parameters) {
             var self = this;
             
             var deferred = $q.defer();
@@ -167,7 +167,7 @@ Application.Services.factory('$oauth2ConnectorFactory', ['$rootScope', '$configu
             return deferred.promise;                        
         };
         
-        OAuthConnector.prototype.handleUnauthorizedRequest = function(request) {
+        OAuth2Connector.prototype.handleUnauthorizedRequest = function(request) {
             var self = this;
             
             // Store the request in a queue.
@@ -249,7 +249,7 @@ Application.Services.factory('$oauth2ConnectorFactory', ['$rootScope', '$configu
             }
         };
         
-        OAuthConnector.prototype.retryRequest = function(request) {
+        OAuth2Connector.prototype.retryRequest = function(request) {
             var self = this;
             
             // Add the client or user access token to the HTTP AUTHORIZATION header.
@@ -271,7 +271,7 @@ Application.Services.factory('$oauth2ConnectorFactory', ['$rootScope', '$configu
                 });
         };
         
-        OAuthConnector.prototype.get = function (parameters) {
+        OAuth2Connector.prototype.get = function (parameters) {
             var self = this;
             
             var settings = angular.extend({ securityContext: null, serviceName: null, serviceEndpoint: null, onBehalfOf: null }, parameters);
@@ -309,7 +309,7 @@ Application.Services.factory('$oauth2ConnectorFactory', ['$rootScope', '$configu
             return deferred.promise;
         };
         
-        OAuthConnector.prototype.post = function (parameters, data) {
+        OAuth2Connector.prototype.post = function (parameters, data) {
             var self = this;
             
             var settings = angular.extend({ securityContext: null, serviceName: null, serviceEndpoint: null, onBehalfOf: null }, parameters);
@@ -349,7 +349,7 @@ Application.Services.factory('$oauth2ConnectorFactory', ['$rootScope', '$configu
             return deferred.promise;
         };
         
-        OAuthConnector.prototype.setAuthorizationHeader = function(settings) {
+        OAuth2Connector.prototype.setAuthorizationHeader = function(settings) {
             // Retrieve the oauth2 access token if the service is invoked on behalf of the client application or the user.
             var accessToken = null;
             switch (settings.onBehalfOf) {
@@ -372,16 +372,16 @@ Application.Services.factory('$oauth2ConnectorFactory', ['$rootScope', '$configu
             }
         };
         
-        OAuthConnector.prototype.transformToRequestParameters = function (data) {
+        OAuth2Connector.prototype.transformToRequestParameters = function (data) {
             // Use jQuery param function to get a form encoded representation of the data parameters.
             // Should this be changed to a private implementation to avoid dependency op jQuery ?
             return $.param(data);
         };
         
-        return new OAuthConnector();
+        return new OAuth2Connector();
     }
     
-    return OAuthConnectorFactory;
+    return OAuth2ConnectorFactory;
 }]);
 
 Application.Services.factory('$oauth2Connector', ['$oauth2ConnectorFactory', function($oauth2ConnectorFactory) {

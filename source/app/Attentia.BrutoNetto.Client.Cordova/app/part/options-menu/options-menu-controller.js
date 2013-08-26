@@ -12,7 +12,7 @@ Application.Controllers.controller('options.menu.controller', ['$scope', '$locat
     // CONTROLLER --------------------------------------------------------------------------------------------------------
     self.selectLocale = function(locale) {
         Enumerable.From($scope.supportedLocales)
-            .ForEach(function(x) { x.isSelected = x.code === locale });
+            .ForEach(function (x) { x.isSelected = x.code === locale; });
         
         $scope.$emit('event:application:change-locale-requested', locale);
     };

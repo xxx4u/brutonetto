@@ -59,11 +59,26 @@
   <ItemGroup>
     <Content Include="app\core\application-bootstrap.js" />
     <Content Include="app\core\application-configuration.js" />
+    <Content Include="app\core\application-configuration.min.js">
+      <DependentUpon>application-configuration.js</DependentUpon>
+    </Content>
     <Content Include="app\core\application-constants.js" />
+    <Content Include="app\core\application-constants.min.js">
+      <DependentUpon>application-constants.js</DependentUpon>
+    </Content>
     <Content Include="app\core\application-controller.js" />
+    <Content Include="app\core\application-controller.min.js">
+      <DependentUpon>application-controller.js</DependentUpon>
+    </Content>
     <Content Include="app\core\application-logger.js" />
+    <Content Include="app\core\application-logger.min.js">
+      <DependentUpon>application-logger.js</DependentUpon>
+    </Content>
     <Content Include="app\core\application-namespace.js" />
     <Content Include="app\core\application-oauth2-connector.js" />
+    <Content Include="app\core\application-oauth2-connector.min.js">
+      <DependentUpon>application-oauth2-connector.js</DependentUpon>
+    </Content>
     <Content Include="app\core\application-repeat-done.js" />
     <Content Include="app\core\object-base.js" />
     <Content Include="app\index.html" />
@@ -251,6 +266,7 @@
     <Content Include="app\lib\angular\jstd-scenario-adapter.js" />
     <Content Include="app\lib\bootstrap\bootstrap.js" />
     <Content Include="app\lib\bootstrap\bootstrap.min.js" />
+    <Content Include="app\lib\fastclick\fastclick.js" />
     <Content Include="app\lib\jquery-plugin\jquery.json.js" />
     <Content Include="app\lib\jquery-plugin\jquery.maskedinput.js" />
     <Content Include="app\lib\jquery-plugin\jquery.nicescroll.js" />
@@ -267,6 +283,7 @@
     <Content Include="app\lib\moment\moment.js" />
     <Content Include="app\lib\moment\moment.min.js" />
     <Content Include="app\lib\move\move.js" />
+    <Content Include="app\lib\skylo\skylo.js" />
     <Content Include="app\lib\store\store2.js" />
     <Content Include="app\lib\store\store2.min.js" />
     <Content Include="app\lib\utils\application-utils.js" />
@@ -2164,40 +2181,88 @@
     <Content Include="app\model\security\user-scope.js" />
     <Content Include="app\model\security\user.js" />
     <Content Include="app\part\about\about-controller.js" />
+    <Content Include="app\part\about\about-controller.min.js">
+      <DependentUpon>about-controller.js</DependentUpon>
+    </Content>
     <Content Include="app\part\about\about.html" />
     <Content Include="app\part\authorization\authorization-controller.js" />
+    <Content Include="app\part\authorization\authorization-controller.min.js">
+      <DependentUpon>authorization-controller.js</DependentUpon>
+    </Content>
     <Content Include="app\part\authorization\authorization-error-controller.js" />
+    <Content Include="app\part\authorization\authorization-error-controller.min.js">
+      <DependentUpon>authorization-error-controller.js</DependentUpon>
+    </Content>
     <Content Include="app\part\authorization\authorization-error.html" />
     <Content Include="app\part\authorization\authorization-signin-controller.js" />
+    <Content Include="app\part\authorization\authorization-signin-controller.min.js">
+      <DependentUpon>authorization-signin-controller.js</DependentUpon>
+    </Content>
     <Content Include="app\part\authorization\authorization-signin.html" />
     <Content Include="app\part\authorization\authorization-signout-controller.js" />
+    <Content Include="app\part\authorization\authorization-signout-controller.min.js">
+      <DependentUpon>authorization-signout-controller.js</DependentUpon>
+    </Content>
     <Content Include="app\part\authorization\authorization-signout.html" />
     <Content Include="app\part\authorization\authorization-signup-controller.js" />
+    <Content Include="app\part\authorization\authorization-signup-controller.min.js">
+      <DependentUpon>authorization-signup-controller.js</DependentUpon>
+    </Content>
     <Content Include="app\part\authorization\authorization-signup.html" />
     <Content Include="app\part\authorization\authorization.html" />
     <Content Include="app\part\bruto-netto\bruto-netto-calculation-controller.js" />
+    <Content Include="app\part\bruto-netto\bruto-netto-calculation-controller.min.js">
+      <DependentUpon>bruto-netto-calculation-controller.js</DependentUpon>
+    </Content>
     <Content Include="app\part\bruto-netto\bruto-netto-calculation.html" />
     <Content Include="app\part\bruto-netto\bruto-netto-controller.js" />
+    <Content Include="app\part\bruto-netto\bruto-netto-controller.min.js">
+      <DependentUpon>bruto-netto-controller.js</DependentUpon>
+    </Content>
     <Content Include="app\part\bruto-netto\bruto-netto-error-controller.js" />
+    <Content Include="app\part\bruto-netto\bruto-netto-error-controller.min.js">
+      <DependentUpon>bruto-netto-error-controller.js</DependentUpon>
+    </Content>
     <Content Include="app\part\bruto-netto\bruto-netto-error.html" />
     <Content Include="app\part\bruto-netto\bruto-netto-model.js" />
     <Content Include="app\part\bruto-netto\bruto-netto-model.min.js">
       <DependentUpon>bruto-netto-model.js</DependentUpon>
     </Content>
     <Content Include="app\part\bruto-netto\bruto-netto-parameter-extended-controller.js" />
+    <Content Include="app\part\bruto-netto\bruto-netto-parameter-extended-controller.min.js">
+      <DependentUpon>bruto-netto-parameter-extended-controller.js</DependentUpon>
+    </Content>
     <Content Include="app\part\bruto-netto\bruto-netto-parameter-extended.html" />
     <Content Include="app\part\bruto-netto\bruto-netto-parameter-quick-controller.js" />
+    <Content Include="app\part\bruto-netto\bruto-netto-parameter-quick-controller.min.js">
+      <DependentUpon>bruto-netto-parameter-quick-controller.js</DependentUpon>
+    </Content>
     <Content Include="app\part\bruto-netto\bruto-netto-parameter-quick.html" />
     <Content Include="app\part\bruto-netto\bruto-netto.html" />
     <Content Include="app\part\debug\debug-controller.js" />
+    <Content Include="app\part\debug\debug-controller.min.js">
+      <DependentUpon>debug-controller.js</DependentUpon>
+    </Content>
     <Content Include="app\part\debug\debug.html" />
     <Content Include="app\part\navigation\navigation-controller.js" />
+    <Content Include="app\part\navigation\navigation-controller.min.js">
+      <DependentUpon>navigation-controller.js</DependentUpon>
+    </Content>
     <Content Include="app\part\navigation\navigation.html" />
     <Content Include="app\part\options-menu\options-menu-controller.js" />
+    <Content Include="app\part\options-menu\options-menu-controller.min.js">
+      <DependentUpon>options-menu-controller.js</DependentUpon>
+    </Content>
     <Content Include="app\part\options-menu\options-menu.html" />
     <Content Include="app\part\profile\profile-controller.js" />
+    <Content Include="app\part\profile\profile-controller.min.js">
+      <DependentUpon>profile-controller.js</DependentUpon>
+    </Content>
     <Content Include="app\part\profile\profile.html" />
     <Content Include="app\part\startup\startup-controller.js" />
+    <Content Include="app\part\startup\startup-controller.min.js">
+      <DependentUpon>startup-controller.js</DependentUpon>
+    </Content>
     <Content Include="app\part\startup\startup.html" />
     <Content Include="app\service\app-base64.js" />
     <Content Include="app\service\app-data-service.js" />
@@ -2209,6 +2274,18 @@
     </Content>
     <Content Include="app\style\application\application.min.css">
       <DependentUpon>application.less</DependentUpon>
+    </Content>
+    <Content Include="app\style\bootstrap\bootstrap.css">
+      <DependentUpon>bootstrap.less</DependentUpon>
+    </Content>
+    <Content Include="app\style\bootstrap\bootstrap.min.css">
+      <DependentUpon>bootstrap.less</DependentUpon>
+    </Content>
+    <Content Include="app\style\bootstrap\variables-override.css">
+      <DependentUpon>variables-override.less</DependentUpon>
+    </Content>
+    <Content Include="app\style\bootstrap\variables-override.min.css">
+      <DependentUpon>variables-override.less</DependentUpon>
     </Content>
     <Content Include="app\style\jquery-plugin\jquery.scrollIndicator.css" />
     <Content Include="app\style\jquery-plugin\jquery.slidePage.css" />
@@ -2289,6 +2366,7 @@
     <Content Include="app\style\jquery-ui\theme\default\images\ui-icons_ffffff_256x240.png" />
     <Content Include="app\style\jquery-ui\theme\default\jquery-ui.css" />
     <Content Include="app\style\jquery-ui\theme\default\jquery-ui.min.css" />
+    <Content Include="app\style\skylo\skylo.css" />
     <Content Include="config\testacular-scenario.conf.js" />
     <Content Include="config\testacular-unit.conf.js" />
     <Content Include="scripts\web-server.js" />
@@ -2381,8 +2459,71 @@
     <Content Include="scripts\test.bat" />
     <Content Include="scripts\test.sh" />
     <Content Include="scripts\web-server.bat" />
+    <Content Include="app\part\bruto-netto\bruto-netto-controller.min.js.map">
+      <DependentUpon>bruto-netto-controller.js</DependentUpon>
+    </Content>
+    <Content Include="app\part\bruto-netto\bruto-netto-calculation-controller.min.js.map">
+      <DependentUpon>bruto-netto-calculation-controller.js</DependentUpon>
+    </Content>
+    <Content Include="app\part\bruto-netto\bruto-netto-parameter-quick-controller.min.js.map">
+      <DependentUpon>bruto-netto-parameter-quick-controller.js</DependentUpon>
+    </Content>
+    <Content Include="app\part\bruto-netto\bruto-netto-parameter-extended-controller.min.js.map">
+      <DependentUpon>bruto-netto-parameter-extended-controller.js</DependentUpon>
+    </Content>
+    <Content Include="app\part\bruto-netto\bruto-netto-error-controller.min.js.map">
+      <DependentUpon>bruto-netto-error-controller.js</DependentUpon>
+    </Content>
+    <Content Include="app\core\application-configuration.min.js.map">
+      <DependentUpon>application-configuration.js</DependentUpon>
+    </Content>
+    <Content Include="app\core\application-constants.min.js.map">
+      <DependentUpon>application-constants.js</DependentUpon>
+    </Content>
+    <Content Include="app\core\application-logger.min.js.map">
+      <DependentUpon>application-logger.js</DependentUpon>
+    </Content>
+    <Content Include="app\core\application-oauth2-connector.min.js.map">
+      <DependentUpon>application-oauth2-connector.js</DependentUpon>
+    </Content>
+    <Content Include="app\core\application-controller.min.js.map">
+      <DependentUpon>application-controller.js</DependentUpon>
+    </Content>
+    <Content Include="app\part\debug\debug-controller.min.js.map">
+      <DependentUpon>debug-controller.js</DependentUpon>
+    </Content>
+    <Content Include="app\part\profile\profile-controller.min.js.map">
+      <DependentUpon>profile-controller.js</DependentUpon>
+    </Content>
+    <Content Include="app\part\options-menu\options-menu-controller.min.js.map">
+      <DependentUpon>options-menu-controller.js</DependentUpon>
+    </Content>
+    <Content Include="app\part\navigation\navigation-controller.min.js.map">
+      <DependentUpon>navigation-controller.js</DependentUpon>
+    </Content>
+    <Content Include="app\part\authorization\authorization-controller.min.js.map">
+      <DependentUpon>authorization-controller.js</DependentUpon>
+    </Content>
+    <Content Include="app\part\authorization\authorization-error-controller.min.js.map">
+      <DependentUpon>authorization-error-controller.js</DependentUpon>
+    </Content>
+    <Content Include="app\part\authorization\authorization-signin-controller.min.js.map">
+      <DependentUpon>authorization-signin-controller.js</DependentUpon>
+    </Content>
+    <Content Include="app\part\authorization\authorization-signout-controller.min.js.map">
+      <DependentUpon>authorization-signout-controller.js</DependentUpon>
+    </Content>
+    <Content Include="app\part\authorization\authorization-signup-controller.min.js.map">
+      <DependentUpon>authorization-signup-controller.js</DependentUpon>
+    </Content>
     <Content Include="app\part\bruto-netto\bruto-netto-model.min.js.map">
       <DependentUpon>bruto-netto-model.js</DependentUpon>
+    </Content>
+    <Content Include="app\part\about\about-controller.min.js.map">
+      <DependentUpon>about-controller.js</DependentUpon>
+    </Content>
+    <Content Include="app\part\startup\startup-controller.min.js.map">
+      <DependentUpon>startup-controller.js</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

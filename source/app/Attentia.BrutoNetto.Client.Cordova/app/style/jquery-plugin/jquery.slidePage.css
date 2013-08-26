@@ -23,7 +23,7 @@
 	-moz-box-shadow: 0px 0px 23px #111111;
 	box-shadow: 0px 0px 23px #111111;
 	overflow: hidden;
-    z-index: 1040;
+    z-index: 999;
     transition: left 0.5s;
     -moz-transition: left 0.5s;
     -webkit-transition: left 0.5s;

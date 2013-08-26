@@ -54,8 +54,35 @@ h1, h2, h3, h4, h5, h6 {
   .border-radius(0px);
 }
 
+.navbar .nav li.dropdown {
+    font-size: 18px;
+}
+
+.navbar .nav > li > .dropdown-menu > li {
+    padding: 2px 0;
+}
+
+// Shared size and type resets
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  height: @inputHeight - 10px;
+}
+
 @media (max-width: 767px) {
-    @baseFontSize: 18px;
     form .btn-group {
         width: 100%;
         text-align: center;

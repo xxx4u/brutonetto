@@ -36,7 +36,11 @@ Application.Controllers.controller('application.controller', ['$scope', '$route'
     
     self.initialize = function () {        
         //$('.scrollIndicator').scrollIndicator();
-        $('#scrollable-content').niceScroll({cursorcolor:'#a0a0a0', cursorborder: '#a0a0a0', cursoropacitymax: 0.5, cursorborderradius: '0px', scrollspeed: 30});
+
+        try {
+            $('#scrollable-content').niceScroll({ cursorcolor: '#a0a0a0', cursorborder: '#a0a0a0', cursoropacitymax: 0.5, cursorborderradius: '0px', scrollspeed: 30 });
+        }
+        catch (error) { /* IGNORE */}
 
         $.slidePage({
             action: 'init',
@@ -73,9 +77,12 @@ Application.Controllers.controller('application.controller', ['$scope', '$route'
             $app_body_content.height($content.height() - $app_nav_menu.height());
 
             //$('.scrollIndicator').scrollIndicator({ action: 'resize' });
-            
+
             setTimeout(function() {
-                $('#scrollable-content').getNiceScroll().resize();
+                try {
+                    $('#scrollable-content').getNiceScroll().resize();
+                }
+                catch (error) { /* IGNORE */ }
             }, 1000);
         }, 10);
     };
