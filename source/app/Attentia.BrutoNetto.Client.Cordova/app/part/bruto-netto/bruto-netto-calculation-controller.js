@@ -13,6 +13,7 @@ Application.Controllers.controller('bruto.netto.calculation.controller', ['$scop
     });
     
     $scope.progress = 0;
+    $scope.test = 0;
     
     $scope.calculate = function() {
         var dto = $scope.brutoNettoModel.toDataTransferObject();

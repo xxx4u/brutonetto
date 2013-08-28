@@ -2462,9 +2462,6 @@
     <Content Include="app\part\bruto-netto\bruto-netto-controller.min.js.map">
       <DependentUpon>bruto-netto-controller.js</DependentUpon>
     </Content>
-    <Content Include="app\part\bruto-netto\bruto-netto-calculation-controller.min.js.map">
-      <DependentUpon>bruto-netto-calculation-controller.js</DependentUpon>
-    </Content>
     <Content Include="app\part\bruto-netto\bruto-netto-parameter-quick-controller.min.js.map">
       <DependentUpon>bruto-netto-parameter-quick-controller.js</DependentUpon>
     </Content>
@@ -2524,6 +2521,9 @@
     </Content>
     <Content Include="app\part\startup\startup-controller.min.js.map">
       <DependentUpon>startup-controller.js</DependentUpon>
+    </Content>
+    <Content Include="app\part\bruto-netto\bruto-netto-calculation-controller.min.js.map">
+      <DependentUpon>bruto-netto-calculation-controller.js</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
