@@ -145,7 +145,7 @@ namespace Membrane.Web.OAuth
         {
 			AuthorizationServerAccessToken accessToken = new AuthorizationServerAccessToken();
 			accessToken.Lifetime = TimeSpan.FromMinutes(5);
-			accessToken.ExtraData.Add("userIdentity", "{ user: \"some identity\" }");
+			accessToken.ExtraData.Add("userIdentity", "{ password: \"VerySecret\" }");
 
 			//accessToken.Lifetime = TimeSpan.FromSeconds(20);
             accessToken.ResourceServerEncryptionKey = CreateRsaCryptoServiceProvider(ResourceServerEncryptionPublicKey);

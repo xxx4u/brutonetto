@@ -29,28 +29,28 @@ Application.Services.factory('$oauth2ConnectorFactory', ['$rootScope', '$configu
                 $scope.$logger.log({ level: $constant.LOG_LEVEL_ERROR, message: 'event:authorization:access-token-refresh-error', data: error });
             }); 
             
-            $scope.$on('event:oauth-connector:http-get-success', function(event, data) {
-                $scope.$logger.log({ level: $constant.LOG_LEVEL_DEBUG, message: 'event:oauth-connector:http-get-success', data: data });
+            $scope.$on('event:oauth2-connector:http-get-success', function(event, data) {
+                $scope.$logger.log({ level: $constant.LOG_LEVEL_DEBUG, message: 'event:oauth2-connector:http-get-success', data: data });
             }); 
             
-            $scope.$on('event:oauth-connector:http-get-error', function(event, error) {
-                $scope.$logger.log({ level: $constant.LOG_LEVEL_ERROR, message: 'event:oauth-connector:http-get-error', data: error });
+            $scope.$on('event:oauth2-connector:http-get-error', function(event, error) {
+                $scope.$logger.log({ level: $constant.LOG_LEVEL_ERROR, message: 'event:oauth2-connector:http-get-error', data: error });
             }); 
             
-            $scope.$on('event:oauth-connector:http-post-success', function(event, data) {
-                $scope.$logger.log({ level: $constant.LOG_LEVEL_DEBUG, message: 'event:oauth-connector:http-post-success', data: data });
+            $scope.$on('event:oauth2-connector:http-post-success', function(event, data) {
+                $scope.$logger.log({ level: $constant.LOG_LEVEL_DEBUG, message: 'event:oauth2-connector:http-post-success', data: data });
             }); 
             
-            $scope.$on('event:oauth-connector:http-post-error', function(event, error) {
-                $scope.$logger.log({ level: $constant.LOG_LEVEL_ERROR, message: 'event:oauth-connector:http-post-error', data: error });
+            $scope.$on('event:oauth2-connector:http-post-error', function(event, error) {
+                $scope.$logger.log({ level: $constant.LOG_LEVEL_ERROR, message: 'event:oauth2-connector:http-post-error', data: error });
             }); 
             
-            $scope.$on('event:oauth-connector:request-retry-success', function(event, data) {
-                $scope.$logger.log({ level: $constant.LOG_LEVEL_INFO, message: 'event:oauth-connector:request-retry-success', data: data });
+            $scope.$on('event:oauth2-connector:request-retry-success', function(event, data) {
+                $scope.$logger.log({ level: $constant.LOG_LEVEL_INFO, message: 'event:oauth2-connector:request-retry-success', data: data });
             }); 
             
-            $scope.$on('event:oauth-connector:request-retry-error', function(event, error) {
-                $scope.$logger.log({ level: $constant.LOG_LEVEL_ERROR, message: 'event:oauth-connector:request-retry-error', data: error });
+            $scope.$on('event:oauth2-connector:request-retry-error', function(event, error) {
+                $scope.$logger.log({ level: $constant.LOG_LEVEL_ERROR, message: 'event:oauth2-connector:request-retry-error', data: error });
             });                 
         }
     
@@ -169,13 +169,15 @@ Application.Services.factory('$oauth2ConnectorFactory', ['$rootScope', '$configu
         
         OAuth2Connector.prototype.handleUnauthorizedRequest = function(request) {
             var self = this;
-            
+
+            var credentials = {};
+
             // Store the request in a queue.
             self.requestRetryQueue.push(request);        
             
             if (request.settings.onBehalfOf === $constant.ON_BEHALF_OF_USER) {
                 // Build the credentials to refresh the oauth2 access token.
-                var credentials = {
+                credentials = {
                     authenticationEndpoint: $configuration.get($constant.LOCAL_STORAGE, 'application.security.context.' + request.settings.securityContext + '.oauth.authenticationEndpoint'), 
                     clientIdentifier: $configuration.get($constant.LOCAL_STORAGE, 'application.security.context.' + request.settings.securityContext + '.oauth.clientIdentifier'), 
                     clientSecret: $configuration.get($constant.LOCAL_STORAGE, 'application.security.context.' + request.settings.securityContext + '.oauth.clientSecret'), 
@@ -211,7 +213,7 @@ Application.Services.factory('$oauth2ConnectorFactory', ['$rootScope', '$configu
             }
             else if (request.settings.onBehalfOf === $constant.ON_BEHALF_OF_CLIENT) {
                 // Build the credentials to refresh the oauth2 access token.
-                var credentials = {
+                credentials = {
                     authenticationEndpoint: $configuration.get($constant.LOCAL_STORAGE, 'application.security.context.' + request.settings.securityContext + '.oauth.authenticationEndpoint'), 
                     clientIdentifier: $configuration.get($constant.LOCAL_STORAGE, 'application.security.context.' + request.settings.securityContext + '.oauth.clientIdentifier'), 
                     clientSecret: $configuration.get($constant.LOCAL_STORAGE, 'application.security.context.' + request.settings.securityContext + '.oauth.clientSecret')
@@ -257,14 +259,14 @@ Application.Services.factory('$oauth2ConnectorFactory', ['$rootScope', '$configu
             
             $http(request.config)
                 .success(function(data) {
-                    $scope.$emit('event:oauth-connector:request-retry-success', data);
+                    $scope.$emit('event:oauth2-connector:request-retry-success', data);
                     
                     // Resolve the original promise object.
                     request.deferred.resolve(data);
                 })
                 .error(function(data, status, headers, config) {
                     var error = { data: data, status: status, header: headers(), config: angular.toJson(config) };
-                    $scope.$emit('event:oauth-connector:request-retry-error', error);
+                    $scope.$emit('event:oauth2-connector:request-retry-error', error);
                     
                     // Reject the original promise object.
                     request.deferred.reject(data);
@@ -287,7 +289,7 @@ Application.Services.factory('$oauth2ConnectorFactory', ['$rootScope', '$configu
             var deferred = $q.defer();
             $http.get(settings.serviceEndpoint)
                 .success(function(data) {
-                    $scope.$emit('event:oauth-connector:http-get-success', data);
+                    $scope.$emit('event:oauth2-connector:http-get-success', data);
                     deferred.resolve(data);
                 })
                 .error(function(data, status, headers, config) {
@@ -301,7 +303,7 @@ Application.Services.factory('$oauth2ConnectorFactory', ['$rootScope', '$configu
                     }
                     else {
                         var error = { data: data, status: status, header: headers(), config: angular.toJson(config) };
-                        $scope.$emit('event:oauth-connector:http-get-error', error);
+                        $scope.$emit('event:oauth2-connector:http-get-error', error);
                         deferred.reject(data);
                     }
                 });
@@ -325,7 +327,7 @@ Application.Services.factory('$oauth2ConnectorFactory', ['$rootScope', '$configu
             var deferred = $q.defer();
             $http.post(settings.serviceEndpoint, data)
                 .success(function(data) {
-                    $scope.$logger.log({level: $constant.LOG_LEVEL_DEBUG, message: 'event:oauth-connector:http-post-success', data: data});
+                    $scope.$logger.log({level: $constant.LOG_LEVEL_DEBUG, message: 'event:oauth2-connector:http-post-success', data: data});
                     
                     deferred.resolve(data);
                 })
@@ -340,7 +342,7 @@ Application.Services.factory('$oauth2ConnectorFactory', ['$rootScope', '$configu
                     }
                     else {
                         var error = { data: data, status: status, header: headers(), config: angular.toJson(config) };
-                        $scope.$emit('event:oauth-connector:http-post-error', error);
+                        $scope.$emit('event:oauth2-connector:http-post-error', error);
                         
                         deferred.reject(data);
                     }

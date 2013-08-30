@@ -1,7 +1,7 @@
 'use strict';
 
 // Create the module namespaces.
-Application.Bootstrap = angular.module('application.bootstrap', ['application.filters', 'application.services', 'application.directives', 'application.constants', 'application.settings', 'application.controllers', 'ui.compat', 'ui', 'pascalprecht.translate', 'app.interval', 'app.bootstrap']);
+Application.Core = Application.Core = angular.module('application.bootstrap', ['application.filters', 'application.constants', 'application.services', 'application.directives', 'application.settings', 'application.controllers', 'ui.compat', 'ui', 'pascalprecht.translate', 'app.interval', 'app.bootstrap']);
 Application.Constants = angular.module('application.constants', []);
 Application.Services = angular.module('application.services', []);
 Application.Filters = angular.module('application.filters', []);
@@ -12,23 +12,35 @@ Application.Controllers = angular.module('application.controllers', ['applicatio
 
 
 // Register the routes.
-Application.Bootstrap
-    .config(['$constant', '$translateProvider', function($constant, $translateProvider){
+Application.Core
+
+    // TRANSLATE PROVIDER
+    .config(['$translateProvider', function($translateProvider){
         $translateProvider.registerLoader({
             type: 'static-files',
-            prefix: 'language/locale_',
+            prefix: 'language/locale.',
             suffix: '.json'
         });
-    }])    
-	.config(['$routeProvider', '$urlRouterProvider', '$stateProvider', '$locationProvider', '$httpProvider', function($routeProvider, $urlRouterProvider, $stateProvider, $locationProvider, $httpProvider) {
+    }])
+
+    // LOCATION PROVIDER
+    .config(['$locationProvider', function ($locationProvider) {
         $locationProvider.html5Mode(false).hashPrefix('');
-        
+    }])
+
+    // HTTP PROVIDER
+    .config(['$httpProvider', function ($httpProvider) {
         // FIX: x-domain request fail. see: https://github.com/angular/angular.js/pull/1454.
         delete $httpProvider.defaults.headers.common["X-Requested-With"];
-        
-        $urlRouterProvider
-            .when('/q?id', '/details/:id')
-            .otherwise('/startup');
+    }])
+
+    // URL ROUTER PROVIDER
+    .config(['$urlRouterProvider', function ($urlRouterProvider) {
+        $urlRouterProvider.otherwise('/startup');
+    }])
+
+    // STATE PROVIDER
+	.config(['$stateProvider', function ($stateProvider) {	    	    
         
         $stateProvider
             .state('startup', {
@@ -128,7 +140,9 @@ Application.Bootstrap
             ;
         
 	}])
-    .run(function ($rootScope, $state, $stateParams, $constant, $configuration, $translate, $logger, $oauth2Connector, $dataService) {
+    .run(function ($rootScope, $constant, $configuration, $logger, $route, $state, $stateParams, $translate, $oauth2Connector, $dataService) {
+        
+        // Add STATE and STATEPARAMS to root scope, so these are available in all controller $scope instances.
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
         
@@ -150,7 +164,13 @@ Application.Bootstrap
         // SCOPE EVENT HANDLERS.
         $rootScope.$on('$stateChangeStart', function (event, next, current) {
             $.slidePage({ action: 'close' });
-        }); 
+        });
+        
+        $rootScope.$on("$stateChangeSuccess", function (event, next, current) {
+            if (!next.url.match(/\/debug/gi)) {
+                $rootScope.$logger.log({ level: $constant.LOG_LEVEL_DEBUG, message: '$stateChangeSuccess', data: next });
+            }
+        });
         
         $rootScope.$on('event:application:change-locale-requested', function (event, locale) {
             try {

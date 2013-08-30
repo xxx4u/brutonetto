@@ -57,7 +57,7 @@
         ObjectBase.prototype = prototype;
         
         // Enforce the constructor to be what we expect.
-        ObjectBase.prototype.constructor = Application.Core.ObjectBase;
+        ObjectBase.prototype.constructor = Application.ObjectBase;
 		
 		// Prototype the $INITIALIZE method.
 		ObjectBase.prototype.$$initialize = function(attributes) {
@@ -75,4 +75,4 @@
     };
 })();
 
-Application.Core.ObjectBase = ObjectBase.extend({ });
+Application.ObjectBase = ObjectBase.extend({ });

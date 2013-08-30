@@ -1,4 +1,4 @@
-Application.Controllers.controller('startup.controller', ['$scope', '$location', '$constant', function($scope, $location, $constant){
+Application.Controllers.controller('startup.controller', ['$scope', '$timeout', function($scope, $timeout){
     var self = this; 
     
     // CONTROLLER --------------------------------------------------------------------------------------------------------
@@ -6,6 +6,8 @@ Application.Controllers.controller('startup.controller', ['$scope', '$location',
         $scope.$state.transitionTo('brutonetto.parameter-quick', $scope.$stateParams);
     }
     else {
-        $scope.$state.transitionTo('authorization.signin', $scope.$stateParams);
+        $timeout(function() {
+            $scope.$state.transitionTo('authorization.signin', $scope.$stateParams);
+        }, 100);
     }
 }]);

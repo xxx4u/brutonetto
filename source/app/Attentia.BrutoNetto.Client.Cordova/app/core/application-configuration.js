@@ -1,72 +1,59 @@
 'use strict';
 
-Application.Settings.factory('$configurationFactory', ['$constant', function($constant) {
+Application.Settings.provider('$configuration', ['$constant', function($constant) {
 
-    function ConfigurationFactory() {
-        var self = this;
-        
-        function Configuration() { }
-        
-        Configuration.prototype.get = function(storage, key, defaultValue) {
-            var value;
-            
-            switch (storage) {
-                case $constant.SESSION_STORAGE:
-                value = store.session.get(key);
-                break;
-                
-                case $constant.LOCAL_STORAGE:
-                value = store.local.get(key);
-                break;
-                
-                default:
-                throw 'UNSUPPORTED STORAGE TYPE';
-            }
-            
-            if (!value) { value = defaultValue; }
-            
-            return value;
-        };
-            
-        Configuration.prototype.set = function(storage, key, value) {        
-            switch (storage) {
-                case $constant.SESSION_STORAGE:
-                    store.session.set(key, value);
-                    break;
-                
-                case $constant.LOCAL_STORAGE:
-                    store.local.set(key, value);
-                    break;
-                
-                default:
-                    throw 'UNSUPPORTED STORAGE TYPE';
-            }
-        };
-            
-        Configuration.prototype.remove = function(storage, key) {
-            switch (storage) {
-                case $constant.SESSION_STORAGE:
-                    store.session.remove(key);
-                    break;
-                
-                case $constant.LOCAL_STORAGE:
-                    store.local.remove(key);
-                    break;
-                
-                default:
-                    throw 'UNSUPPORTED STORAGE TYPE';
-            }
-        };
-            
-        
-        return new Configuration();
+    function Configuration() {
     }
-    
-    return ConfigurationFactory;
-}]);
 
-Application.Settings.factory('$configuration', ['$configurationFactory', function($configurationFactory) {
+    Configuration.prototype.get = function(storage, key, defaultValue) {
+        var value;
+
+        switch (storage) {
+        case $constant.SESSION_STORAGE:
+            value = store.session.get(key);
+            break;
+        case $constant.LOCAL_STORAGE:
+            value = store.local.get(key);
+            break;
+        default:
+            throw 'UNSUPPORTED STORAGE TYPE';
+        }
+
+        if (!value) {
+            value = defaultValue;
+        }
+
+        return value;
+    };
+
+    Configuration.prototype.set = function(storage, key, value) {
+        switch (storage) {
+        case $constant.SESSION_STORAGE:
+            store.session.set(key, value);
+            break;
+        case $constant.LOCAL_STORAGE:
+            store.local.set(key, value);
+            break;
+        default:
+            throw 'UNSUPPORTED STORAGE TYPE';
+        }
+    };
+
+    Configuration.prototype.remove = function(storage, key) {
+        switch (storage) {
+        case $constant.SESSION_STORAGE:
+            store.session.remove(key);
+            break;
+        case $constant.LOCAL_STORAGE:
+            store.local.remove(key);
+            break;
+        default:
+            throw 'UNSUPPORTED STORAGE TYPE';
+        }
+    };
     
-    return $configurationFactory();    
-                                              
+    this.$get = function () {
+        return new Configuration();
+    };
+    
 }]);

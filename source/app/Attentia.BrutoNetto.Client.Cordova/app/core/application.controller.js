@@ -1,6 +1,6 @@
 'use strict';
 
-Application.Controllers.controller('application.controller', ['$scope', '$route', '$routeParams', '$oauth2Connector', '$configuration', function($scope, $route, $routeParams, $oauth2Connector, $configuration) {
+Application.Controllers.controller('application.controller', ['$scope', function($scope) {
     var self = this;
     
     // SCOPE
@@ -35,13 +35,6 @@ Application.Controllers.controller('application.controller', ['$scope', '$route'
     // CONTROLLER --------------------------------------------------------------------------------------------------------
     
     self.initialize = function () {        
-        //$('.scrollIndicator').scrollIndicator();
-
-        try {
-            $('#scrollable-content').niceScroll({ cursorcolor: '#a0a0a0', cursorborder: '#a0a0a0', cursoropacitymax: 0.5, cursorborderradius: '0px', scrollspeed: 30 });
-        }
-        catch (error) { /* IGNORE */}
-
         $.slidePage({
             action: 'init',
             toggle: '.app-menu-toggle',
@@ -75,15 +68,6 @@ Application.Controllers.controller('application.controller', ['$scope', '$route'
             var $app_nav_menu = $('.app-nav-menu');
             var $app_body_content = $('.app-body-content');
             $app_body_content.height($content.height() - $app_nav_menu.height());
-
-            //$('.scrollIndicator').scrollIndicator({ action: 'resize' });
-
-            setTimeout(function() {
-                try {
-                    $('#scrollable-content').getNiceScroll().resize();
-                }
-                catch (error) { /* IGNORE */ }
-            }, 1000);
         }, 10);
     };
 

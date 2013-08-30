@@ -77,11 +77,11 @@ namespace Membrane.Web
 							isAuthorized = true;
 						}
 
-						var _token = resourceServer.GetAccessToken(request);
+						AccessToken _token = resourceServer.GetAccessToken(request);
 
 						if (this.RequiredScopes.Any())
 						{
-							var token = resourceServer.GetAccessToken(request, this.RequiredScopes);
+							AccessToken token = resourceServer.GetAccessToken(request, this.RequiredScopes);
 						}
 					}
 				}

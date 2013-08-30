@@ -1,13 +1,13 @@
 Application.Model.BrutoNetto = Application.Model.BrutoNetto || {};
 
-Application.Model.BrutoNetto.PresentationRules = Application.Core.ObjectBase.extend({
+Application.Model.BrutoNetto.PresentationRules = Application.ObjectBase.extend({
     brutoNettoModel: null,
     applyPresentationRules: function() {
         if (!this.brutoNettoModel) { return; }
     }
 });
 
-Application.Model.BrutoNetto.ParameterGroup = Application.Core.ObjectBase.extend({
+Application.Model.BrutoNetto.ParameterGroup = Application.ObjectBase.extend({
     Caption: null,
     IsOptional: false,
     IsSelected: true,
@@ -24,7 +24,7 @@ Application.Model.BrutoNetto.ParameterGroup = Application.Core.ObjectBase.extend
     },
 });
 
-Application.Model.BrutoNetto.Parameter = Application.Core.ObjectBase.extend({
+Application.Model.BrutoNetto.Parameter = Application.ObjectBase.extend({
     ID: null,
     Caption: null,
     Value: null,
@@ -69,7 +69,7 @@ Application.Model.BrutoNetto.SelectionParameter = Application.Model.BrutoNetto.P
     Options: []
 });
 
-Application.Model.BrutoNetto.BrutoNettoModel = Application.Core.ObjectBase.extend({    
+Application.Model.BrutoNetto.BrutoNettoModel = Application.ObjectBase.extend({    
     ParameterGroups: [],
     Calculation: {
         Bruto: null,
